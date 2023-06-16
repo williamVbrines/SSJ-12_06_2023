@@ -18,17 +18,17 @@ namespace ssj12062023
             behaviourMutationData.AddRange(Resources.LoadAll<BehaviourMutationData>(folder));
         }
 
-        public static BehaviourMutationData Get(string id)
+        public static BehaviourMutationData Get(string uid)
         {
             foreach (BehaviourMutationData m in behaviourMutationData)
             {
-                if (m.id == id)
+                if (m.uid == uid)
                 {
                     return m;
                 }
             }
 
-            Debug.LogError($"No BehaviourMutationData with Id {id} exists");
+            Debug.LogError($"No BehaviourMutationData with Id {uid} exists");
             return null;
         }
 

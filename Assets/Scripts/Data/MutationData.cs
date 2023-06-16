@@ -5,11 +5,8 @@ using UnityEngine;
 
 namespace ssj12062023
 {
-    public class MutationData : ScriptableObject
+    public class MutationData : Data
     {
-        [SerializeField, ReadOnly]
-        protected string id = string.Empty;
-
         [Space(20)]
 
         public string Name;
@@ -23,15 +20,5 @@ namespace ssj12062023
         public int GeneticCost;
 
         public Sprite Icon;
-
-        public string Id => id;
-
-        public void GenerateUID()
-        {
-            string uniqueId = System.Guid.NewGuid().ToString();
-            if (id.Equals(uniqueId)) return;
-
-            id = uniqueId;
-        }
     }
 }

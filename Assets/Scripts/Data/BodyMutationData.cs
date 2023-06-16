@@ -18,17 +18,17 @@ namespace ssj12062023
             bodyMutationData.AddRange(Resources.LoadAll<BodyMutationData>(folder));
         }
 
-        public static BodyMutationData Get(string id)
+        public static BodyMutationData Get(string uid)
         {
             foreach (BodyMutationData m in bodyMutationData)
             {
-                if (m.id == id)
+                if (m.uid == uid)
                 {
                     return m;
                 }
             }
 
-            Debug.LogError($"No BodyMutationData with Id {id} exists");
+            Debug.LogError($"No BodyMutationData with Id {uid} exists");
             return null;
         }
 

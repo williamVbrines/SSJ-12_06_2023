@@ -5,19 +5,19 @@ using UnityEngine;
 
 namespace ssj12062023
 {
-    [CustomEditor(typeof(MutationData), true)]
-    public class MutationDataEditor : Editor
+    [CustomEditor(typeof(Data), true)]
+    public class DataEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
-            MutationData mutationDataSO = (MutationData)target;
+            Data dataSO = (Data)target;
 
             EditorGUILayout.Space();
 
             if (GUILayout.Button("Generate UID"))
             {
-                mutationDataSO.GenerateUID();
+                dataSO.GenerateUID();
                 EditorUtility.SetDirty(target);
                 AssetDatabase.SaveAssets();
             }
