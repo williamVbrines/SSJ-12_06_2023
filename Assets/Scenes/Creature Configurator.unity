@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 1021370991}
   - component: {fileID: 1021370993}
   - component: {fileID: 1021370992}
+  - component: {fileID: 1021370994}
   m_Layer: 5
   m_Name: Configurator
   m_TagString: Untagged
@@ -631,6 +632,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021370990}
   m_CullTransparentMesh: 1
+--- !u!114 &1021370994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021370990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d4d156e25e98c409c12bcf94f0398e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyMutationsSlotsArea: {fileID: 0}
+  behaviourMutationSlot: {fileID: 0}
 --- !u!1 &1063439070
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +698,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b1c5a53a836b44daaba82704c6782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 115560888534559477, guid: 4d2735d90603a2042b4fc4d883b4a593,
+  bodyMutationCardPrefab: {fileID: 115560888534559477, guid: 4d2735d90603a2042b4fc4d883b4a593,
+    type: 3}
+  behaviourMutationCardPrefab: {fileID: 115560888534559477, guid: 130eeaed511842943883c448a80da58a,
     type: 3}
 --- !u!114 &1063439073
 MonoBehaviour:
@@ -949,6 +966,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2125077999}
   - component: {fileID: 2125078000}
+  - component: {fileID: 2125078002}
+  - component: {fileID: 2125078001}
   m_Layer: 5
   m_Name: Body Mutation Slots
   m_TagString: Untagged
@@ -1000,3 +1019,41 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &2125078001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125077998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2125078002
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125077998}
+  m_CullTransparentMesh: 1

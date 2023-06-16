@@ -6,7 +6,8 @@ namespace ssj12062023
 {
     public class SimpleInventory : MonoBehaviour
     {
-        [SerializeField] private GameObject cardPrefab;
+        [SerializeField] private GameObject bodyMutationCardPrefab;
+        [SerializeField] private GameObject behaviourMutationCardPrefab;
 
         // Start is called before the first frame update
         void Start()
@@ -27,7 +28,14 @@ namespace ssj12062023
 
             foreach (BodyMutationData m in bodyMutationData)
             {
-                GameObject card = Instantiate(cardPrefab, this.transform);
+                GameObject card = Instantiate(bodyMutationCardPrefab, this.transform);
+                card.GetComponentInChildren<BodyMutationCard>().SetData(m);
+            }
+
+            foreach (BehaviourMutationData m in behaviourMutationData)
+            {
+                GameObject card = Instantiate(behaviourMutationCardPrefab, this.transform);
+                card.GetComponentInChildren<BehaviourMutationCard>().SetData(m);
             }
         }
     }

@@ -29,6 +29,8 @@ namespace ssj12062023
             originalPosition = rectTransform.anchoredPosition;
             canvasGroup.alpha = .6f;
             canvasGroup.blocksRaycasts = false;
+
+            isDroppedInValidArea = false;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -43,11 +45,20 @@ namespace ssj12062023
 
             if (!isDroppedInValidArea)
             {
-                StartCoroutine(ReturnToOriginalPosition());
+                StartCoroutine(LerpToOriginalPosition());
+            }
+            else
+            {
+                SnapToOriginalPosition();
             }
         }
 
-        private IEnumerator ReturnToOriginalPosition()
+        private void SnapToOriginalPosition()
+        {
+            rectTransform.anchoredPosition = originalPosition;
+        }
+
+        private IEnumerator LerpToOriginalPosition()
         {
             float elapsedTime = 0;           
 
