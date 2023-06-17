@@ -12,9 +12,13 @@ public class ScreenToWorldRayCast : MonoBehaviour
     private Transform selectedTransform;
     public Transform SelectedTransform { get { return selectedTransform; } }
 
+    int layerMask;
+
     private void Awake()
     {
         mainCamera = Camera.main;
+        layerMask = 1 << 6;
+        layerMask = ~layerMask;
     }
 
     private void Update()
@@ -28,7 +32,7 @@ public class ScreenToWorldRayCast : MonoBehaviour
         {
             screenToWorldRay = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(screenToWorldRay, out RaycastHit hit))
+            if (Physics.Raycast(screenToWorldRay, out RaycastHit hit, 500f, layerMask))
             {
                 hitTransform = hit.transform;
                 return hit.transform;
