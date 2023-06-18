@@ -16,9 +16,9 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        MoveCamera();
-
         UpdateCameraMoveSpeed();
+
+        MoveCamera();
     }
 
     private void MoveCamera()
