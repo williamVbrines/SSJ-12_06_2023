@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraMovement : MonoBehaviour
 {
+    [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+
     [SerializeField] private float cameraMovementSpeed;
-    
+
+    [SerializeField] private RoomAnchors currentAnchor;
+
     private Vector3 cameraMovementSpeedVectorOnX;
     private Vector3 cameraMovementSpeedVectorOnZ;
 
     private void Awake()
     {
+        cinemachineVirtualCamera.m_Follow = currentAnchor.transform;
+
         UpdateCameraMoveSpeed();
     }
 
@@ -23,24 +30,21 @@ public class CameraMovement : MonoBehaviour
 
     private void MoveCamera()
     {
-        if (Input.anyKey)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.position += cameraMovementSpeedVectorOnZ * Time.deltaTime;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.position += -cameraMovementSpeedVectorOnX * Time.deltaTime;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.position += -cameraMovementSpeedVectorOnZ * Time.deltaTime;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.position += cameraMovementSpeedVectorOnX * Time.deltaTime;
-            }
+            ChangeRoom(currentAnchor.NorthAnchor);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ChangeRoom(currentAnchor.WestAnchor);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ChangeRoom(currentAnchor.SouthAnchor);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            ChangeRoom(currentAnchor.EastAnchor);
         }
     }
 
@@ -50,6 +54,15 @@ public class CameraMovement : MonoBehaviour
         {
             cameraMovementSpeedVectorOnX = new Vector3(cameraMovementSpeed, 0f, 0f);
             cameraMovementSpeedVectorOnZ = new Vector3(0f, 0f, cameraMovementSpeed);
+        }
+    }
+
+    private void ChangeRoom(RoomAnchors changedRoomAnchor)
+    {
+        if (changedRoomAnchor)
+        {
+            currentAnchor = changedRoomAnchor;
+            cinemachineVirtualCamera.m_Follow = currentAnchor.transform;
         }
     }
 }
