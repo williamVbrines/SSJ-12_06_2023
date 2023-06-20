@@ -30,21 +30,24 @@ public class CameraMovement : MonoBehaviour
 
     private void MoveCamera()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (GameManager.Instance.IsGameStarted)
         {
-            ChangeRoom(currentAnchor.NorthAnchor);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChangeRoom(currentAnchor.WestAnchor);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            ChangeRoom(currentAnchor.SouthAnchor);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ChangeRoom(currentAnchor.EastAnchor);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                ChangeRoom(currentAnchor.NorthAnchor);
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                ChangeRoom(currentAnchor.WestAnchor);
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                ChangeRoom(currentAnchor.SouthAnchor);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                ChangeRoom(currentAnchor.EastAnchor);
+            }
         }
     }
 

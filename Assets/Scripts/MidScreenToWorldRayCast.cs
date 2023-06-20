@@ -15,24 +15,31 @@ public class MidScreenToWorldRayCast : MonoBehaviour
 
     private void Update()
     {
-        Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hitRoof, 500f);
+        ChangeTransparency();
+    }
 
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 500, Color.red);
-
-        if(lastHitRoof != hitRoof.transform)
+    private void ChangeTransparency()
+    {
+        if (GameManager.Instance.IsGameStarted)
         {
-            if (lastHitRoof && lastHitRoof.transform.TryGetComponent<MaterialTransparency>(out MaterialTransparency materialTransparencyOpaque))
-            {
-                materialTransparencyOpaque.MakeOpaque();
-            }
+            Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hitRoof, 500f);
 
-            lastHitRoof = hitRoof.transform;
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 500, Color.red);
 
-            if(lastHitRoof.transform.TryGetComponent<MaterialTransparency>(out MaterialTransparency materialTransparency))
+            if (lastHitRoof != hitRoof.transform)
             {
-                materialTransparency.MakeTransparent();
+                if (lastHitRoof && lastHitRoof.transform.TryGetComponent<MaterialTransparency>(out MaterialTransparency materialTransparencyOpaque))
+                {
+                    materialTransparencyOpaque.MakeOpaque();
+                }
+
+                lastHitRoof = hitRoof.transform;
+
+                if (lastHitRoof.transform.TryGetComponent<MaterialTransparency>(out MaterialTransparency materialTransparency))
+                {
+                    materialTransparency.MakeTransparent();
+                }
             }
-            
         }
     }
 }
