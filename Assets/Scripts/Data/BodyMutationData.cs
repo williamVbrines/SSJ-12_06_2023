@@ -36,5 +36,18 @@ namespace ssj12062023
         {
             return bodyMutationData;
         }
+
+        public static List<BodyMutationData> GetAll(EBodyPartType type)
+        {
+            List<BodyMutationData> list = new();
+            foreach (BodyMutationData m in bodyMutationData)
+            {
+                if (m.BodyPart.Type == type)
+                {
+                    list.Add(m);
+                }
+            }
+            return list;
+        }
     }
 }
