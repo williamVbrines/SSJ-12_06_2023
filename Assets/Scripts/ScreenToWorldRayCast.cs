@@ -52,9 +52,12 @@ public class ScreenToWorldRayCast : MonoBehaviour
 
     private void SelectHitTransform()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && CastRay(out selectedTransform))
+        if (GameManager.Instance.IsGameStarted)
         {
-            Debug.Log(SelectedTransform);
+            if (Input.GetKeyDown(KeyCode.Mouse0) && CastRay(out selectedTransform))
+            {
+                Debug.Log(SelectedTransform);
+            }
         }
     }
 
