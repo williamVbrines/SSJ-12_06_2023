@@ -7,10 +7,8 @@ namespace ssj12062023
 {
     public class Inventory : MonoBehaviour
     {
-        public InventoryTypeDisplayContainer InventoryTypeDisplayContainer;
+        public TypeDisplayContainer TypeDisplayContainer;
         public InventoryContentContainer InventoryContentContainer;
-
-        private readonly List<BodyMutationData> availableBodyMutationData = new();
 
         // Start is called before the first frame update
         void Start()
@@ -18,15 +16,9 @@ namespace ssj12062023
             Init();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void Init()
         {
-            InventoryTypeDisplayContainer.Init();
+            TypeDisplayContainer.Init();
             InventoryContentContainer.Init();
         }
 

@@ -20,5 +20,7 @@ namespace ssj12062023
         public int GeneticCost;
 
         public Sprite Icon;
+
+        public EMutationType Type;
     }
 }

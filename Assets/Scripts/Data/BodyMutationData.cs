@@ -37,12 +37,12 @@ namespace ssj12062023
             return bodyMutationData;
         }
 
-        public static List<BodyMutationData> GetAll(EBodyPartType type)
+        public static List<BodyMutationData> GetAll(EMutationType type)
         {
             List<BodyMutationData> list = new();
             foreach (BodyMutationData m in bodyMutationData)
             {
-                if (m.BodyPart.Type == type)
+                if (m.Type == type)
                 {
                     list.Add(m);
                 }
