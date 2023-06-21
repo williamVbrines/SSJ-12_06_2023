@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace ssj12062023
 {
-    public class Configurator : MonoBehaviour //, IDropHandler 
+    public class ConfiguratorPlaceholder : MonoBehaviour //, IDropHandler 
     {
         //[SerializeField] private GameObject bodyMutationsSlotsArea;
         //[SerializeField] private VialSlot behaviourMutationCardSlot;

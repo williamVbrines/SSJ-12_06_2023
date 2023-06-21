@@ -12,8 +12,12 @@ namespace ssj12062023
         [ReadOnly] public string CardUID;
         [SerializeField] private Image image;
         [SerializeField] private TextMeshProUGUI title;
+        [SerializeField] private ShadowCopy shadowCopy;
 
         private Sprite emptySlot;
+
+        public Image Image => image;
+        public TextMeshProUGUI Title => title;
 
         private void OnEnable()
         {
@@ -26,6 +30,8 @@ namespace ssj12062023
             CardUID = data.UID;
             image.sprite = data.Icon;
             title.text = data.Name;
+
+            shadowCopy.SetInfo(this);
         }
 
         public void ResetSlot()
@@ -33,6 +39,8 @@ namespace ssj12062023
             CardUID = string.Empty;
             title.text = string.Empty;
             image.sprite = emptySlot;
+
+            shadowCopy.Clear();
         }
     }
 }
