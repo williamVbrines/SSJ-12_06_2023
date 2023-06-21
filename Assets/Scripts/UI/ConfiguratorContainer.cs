@@ -1,27 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace ssj12062023
 {
-    public class Inventory : MonoBehaviour
+    public class ConfiguratorContainer : MonoBehaviour
     {
         public TypeDisplayContainer TypeDisplayContainer;
-        public InventoryContentContainer InventoryContentContainer;
+        public Configurator Configurator;
 
         // Start is called before the first frame update
         void Start()
         {
-            Init();
-        }
-
-        public void Init()
-        {
             TypeDisplayContainer.Init();
-            InventoryContentContainer.Init();
+            Configurator.Init();
         }
-
-
     }
 }
