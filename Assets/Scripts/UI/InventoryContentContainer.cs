@@ -8,20 +8,20 @@ namespace ssj12062023
 {
     public class InventoryContentContainer : MonoBehaviour
     {
-        public InventoryTypeDisplayContainer InventoryTypeDisplayContainer;
+        public TypeDisplayContainer TypeDisplayContainer;
         public VialSlot[] VialSlots;
 
         private int displayStartIndex;
-        private readonly List<BodyMutationData> availableBodyMutationData = new();
+        private readonly List<MutationData> availableBodyMutationData = new();
 
         private void OnEnable()
         {
-            InventoryTypeDisplayContainer.OnBodyPartTypeChanged += OnBodyPartTypeChanged;
+            TypeDisplayContainer.OnOptionChanged += OnBodyPartTypeChanged;
         }
 
         private void OnDisable()
         {
-            InventoryTypeDisplayContainer.OnBodyPartTypeChanged -= OnBodyPartTypeChanged;
+            TypeDisplayContainer.OnOptionChanged -= OnBodyPartTypeChanged;
         }
 
         // Start is called before the first frame update
@@ -55,29 +55,62 @@ namespace ssj12062023
         private void UpdateAvailableBodyMutationData()
         {
             availableBodyMutationData.Clear();
-            availableBodyMutationData.AddRange(BodyMutationData.GetAll(InventoryTypeDisplayContainer.CurrentBodyPartType));
+
+            if (TypeDisplayContainer.CurrentOption != "Behaviour")
+            {
+                availableBodyMutationData.AddRange(
+                BodyMutationData.GetAll(
+                    (EMutationType)System.Enum.Parse(typeof(EMutationType), TypeDisplayContainer.CurrentOption)
+                    )
+                );
+            }
+            else
+            {
+                availableBodyMutationData.AddRange(BehaviourMutationData.GetAll());
+            }
         }
 
         public void UpdateDisplayedMutationVials()
         {
+            if (availableBodyMutationData.Count == 0)
+            {
+                ClearVialSlots();
+            }
+            else
+            {
+                for (int i = 0; i < VialSlots.Length; i++)
+                {
+                    if (i < availableBodyMutationData.Count)
+                    {
+                        int itemIndex = (displayStartIndex + i) % availableBodyMutationData.Count;
+                        VialSlots[i].SetData(availableBodyMutationData[itemIndex]);
+                    }
+                }
+            }            
+        }
+
+        private void ClearVialSlots()
+        {
             for (int i = 0; i < VialSlots.Length; i++)
             {
-                if (i < availableBodyMutationData.Count)
-                {
-                    int itemIndex = (displayStartIndex + i) % availableBodyMutationData.Count;
-                    VialSlots[i].SetData(availableBodyMutationData[itemIndex]);
-                }                
+                VialSlots[i].ResetSlot();
             }
         }
 
-        private void OnRightButton()
+        public void OnRightButton()
         {
+            if (availableBodyMutationData.Count == 0 
+                || availableBodyMutationData.Count <= VialSlots.Length) return;
+
             displayStartIndex = (displayStartIndex + 1) % availableBodyMutationData.Count;
             UpdateDisplayedMutationVials();
         }
 
-        private void OnLeftButton()
+        public void OnLeftButton()
         {
+            if (availableBodyMutationData.Count == 0
+                || availableBodyMutationData.Count <= VialSlots.Length) return;
+
             displayStartIndex--;
             if (displayStartIndex < 0)
             {

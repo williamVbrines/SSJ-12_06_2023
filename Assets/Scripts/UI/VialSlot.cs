@@ -28,9 +28,10 @@ namespace ssj12062023
             title.text = data.Name;
         }
 
-        public void ResetSprite()
+        public void ResetSlot()
         {
             CardUID = string.Empty;
+            title.text = string.Empty;
             image.sprite = emptySlot;
         }
     }
