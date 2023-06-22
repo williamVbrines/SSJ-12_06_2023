@@ -347,7 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b76165e4d9d1d4f81b5c886f357753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TypeDisplayContainer: {fileID: 1961110553}
+  typeDisplayContainer: {fileID: 1961110553}
+  maxGeneticLoad: 100
 --- !u!1 &57368110
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,8 +953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45fa3982d418344fa36072075e6bb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyMutationLoadFolder: BodyMutations
-  behaviourMutationLoadFolder: BehaviourMutations
+  BodyMutationsFolder: BodyMutations
+  BehaviourMutationsFolder: BehaviourMutations
+  ConfigurationLayoutsFolder: ConfigurationLayouts
 --- !u!4 &267434788
 Transform:
   m_ObjectHideFlags: 0
@@ -6169,14 +6171,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 549962527}
   options:
-  - Monopedal
-  - Bipedal
-  - Tertipedal
-  - Quadrupedal
-  - Tetrapedal
-  - Hexapodal
-  - Octopedal
-  - Decapodal
+  - Monopod
+  - Bipod
+  - Tripod
+  - Quadrupod
+  - Tetrapod
 --- !u!224 &1966180392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 115560888534559474, guid: 0a6a31699fc6c1c4ba9ef59cfcd2e956,

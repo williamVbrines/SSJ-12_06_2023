@@ -9,25 +9,25 @@ namespace ssj12062023
 {
     public class VialSlot : MonoBehaviour
     {
-        [ReadOnly] public string CardUID;
+        [SerializeField, ReadOnly] private MutationData mutationData;
         [SerializeField] private Image image;
         [SerializeField] private TextMeshProUGUI title;
         [SerializeField] private ShadowCopy shadowCopy;
 
         private Sprite emptySlot;
 
+        public MutationData MutationData => mutationData;
         public Image Image => image;
         public TextMeshProUGUI Title => title;
 
         private void OnEnable()
         {
             emptySlot = image.sprite;
-            CardUID = string.Empty;
         }
 
         public void SetData(MutationData data)
         {
-            CardUID = data.UID;
+            mutationData = data;
             image.sprite = data.Icon;
             title.text = data.Name;
 
@@ -36,7 +36,7 @@ namespace ssj12062023
 
         public void ResetSlot()
         {
-            CardUID = string.Empty;
+            mutationData = null;
             title.text = string.Empty;
             image.sprite = emptySlot;
 
