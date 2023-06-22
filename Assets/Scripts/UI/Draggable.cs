@@ -30,12 +30,12 @@ namespace ssj12062023
             canvasGroup.alpha = .6f;
             canvasGroup.blocksRaycasts = false;
 
-            isDroppedInValidArea = false;
+            isDroppedInValidArea = false;           
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;          
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -50,7 +50,7 @@ namespace ssj12062023
             else
             {
                 SnapToOriginalPosition();
-            }
+            }           
         }
 
         private void SnapToOriginalPosition()
