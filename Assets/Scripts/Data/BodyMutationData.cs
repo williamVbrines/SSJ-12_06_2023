@@ -8,7 +8,6 @@ namespace ssj12062023
     public class BodyMutationData : MutationData
     {
         public float Hp;
-        public BodyPartData BodyPart;
 
         protected static List<BodyMutationData> bodyMutationData = new();
 
@@ -35,6 +34,19 @@ namespace ssj12062023
         public static List<BodyMutationData> GetAll()
         {
             return bodyMutationData;
+        }
+
+        public static List<BodyMutationData> GetAll(EMutationType type)
+        {
+            List<BodyMutationData> list = new();
+            foreach (BodyMutationData m in bodyMutationData)
+            {
+                if (m.Type == type)
+                {
+                    list.Add(m);
+                }
+            }
+            return list;
         }
     }
 }

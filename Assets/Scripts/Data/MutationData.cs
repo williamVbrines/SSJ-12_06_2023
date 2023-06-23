@@ -5,6 +5,16 @@ using UnityEngine;
 
 namespace ssj12062023
 {
+    public enum EMutationType
+    {
+        Eyes, Head, Torso, Arms, Legs, Tail, Behaviour
+    }
+
+    public enum EBidirectionality
+    {
+        Left, Right, None
+    }
+
     public class MutationData : Data
     {
         [Space(20)]
@@ -20,5 +30,8 @@ namespace ssj12062023
         public int GeneticCost;
 
         public Sprite Icon;
+
+        public EMutationType Type;
+        public EBidirectionality Bidirectionality;
     }
 }

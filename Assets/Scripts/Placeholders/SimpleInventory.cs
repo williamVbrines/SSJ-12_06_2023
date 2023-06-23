@@ -29,7 +29,7 @@ namespace ssj12062023
             foreach (BodyMutationData m in bodyMutationData)
             {
                 GameObject card = Instantiate(bodyMutationCardPrefab, this.transform);
-                card.GetComponentInChildren<BodyMutationCard>().SetData(m);
+                card.GetComponentInChildren<MutationVial>().SetData(m);
             }
 
             foreach (BehaviourMutationData m in behaviourMutationData)

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce849d8fea10fb4d94010ec2a4b0366, type: 3}
+  m_Name: Combative
+  m_EditorClassIdentifier: 
+  uid: e4170234-1ae4-449f-b2d6-53054cdd68d7
+  Name: Combative
+  Description: 
+  GeneticCost: 0
+  Icon: {fileID: 21300000, guid: f407a57ced50aa244b2ec98b233ecb36, type: 3}
+  Type: 6
+  Bidirectionality: 2
+  Aggression: 75

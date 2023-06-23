@@ -4,9 +4,12 @@ using UnityEngine;
 
 namespace ssj12062023
 {
+    
+
     [CreateAssetMenu(fileName = "New Body Part", menuName = "SSJ12062023/Body Part")]
     public class BodyPartData : Data
     {
+        
         public Sprite Part;
         public int AnchorPointsCount;
     }
