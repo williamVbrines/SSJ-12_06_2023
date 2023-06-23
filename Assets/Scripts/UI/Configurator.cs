@@ -12,12 +12,21 @@ namespace ssj12062023
         [SerializeField] private TypeDisplayContainer typeDisplayContainer;
         [SerializeField] private int maxGeneticLoad = 100;
 
-        private readonly List<VialSlot> bodyMutationSlots = new();
-        private VialSlot behaviourChipSlot;
+        [Space(20)]
+        [Header("Configurator Vial Slots")]
+        [SerializeField] private ConfiguratorVialSlot leftEyeSlot;
+        [SerializeField] private ConfiguratorVialSlot rightEyeSlot;
+        [SerializeField] private ConfiguratorVialSlot headSlot;
+        [SerializeField] private ConfiguratorVialSlot torsoSlot;
+        [SerializeField] private ConfiguratorVialSlot leftArmSlot;
+        [SerializeField] private ConfiguratorVialSlot rightArmSlot;
+        [SerializeField] private ConfiguratorVialSlot leftLegSlot;
+        [SerializeField] private ConfiguratorVialSlot rightLegSlot;
+        [SerializeField] private ConfiguratorVialSlot tailSlot;
+        [SerializeField] private ConfiguratorVialSlot behaviourChipSlot;
 
         private int currentGeneticLoad;
         private ConfigurationLayoutData currentLayout;
-        private Image image;
 
         public event Action OnConfigurationChanged;
 
@@ -38,18 +47,7 @@ namespace ssj12062023
 
         private void ChangeLayout()
         {
-            currentLayout = ConfigurationLayoutData.GetByName(typeDisplayContainer.CurrentOption);
-
-            if (currentLayout != null)
-            {
-                image.sprite = currentLayout.Sprite;
-                currentGeneticLoad = 0;
-
-                OnConfigurationChanged?.Invoke();
-                return;
-            }
-
-            Debug.LogError($"No configuration layout with the name: {typeDisplayContainer.CurrentOption}");            
+                      
         }
 
         public void OnDrop(PointerEventData eventData)
@@ -79,6 +77,26 @@ namespace ssj12062023
                     else
                     {
                         // Handle logic to place data onto correct slot on configurator
+                        switch (copy.VialSlot.MutationData.Type)
+                        {
+                            case EMutationType.Eyes:
+                                HandleEyeSlots(copy.VialSlot.MutationData);
+                                break;
+                            case EMutationType.Head:
+                                HandleHeadSlot(copy.VialSlot.MutationData);
+                                break;
+                            case EMutationType.Torso:
+                                
+                                break;
+                            case EMutationType.Arms:
+                                break;
+                            case EMutationType.Legs:
+                                break;
+                            case EMutationType.Tail:
+                                break;
+                            default:
+                                break;
+                        }
                     }
 
                     OnConfigurationChanged?.Invoke();
@@ -92,13 +110,43 @@ namespace ssj12062023
             }
         }
 
+        private void HandleEyeSlots(MutationData data)
+        {
+            if (leftEyeSlot.IsAvailable)
+            {
+                leftEyeSlot.SetData(data);
+                return;
+            }
+
+            if (rightEyeSlot.IsAvailable)
+            {
+                rightEyeSlot.SetData(data);
+                return;
+            }
+        }
+
+        private void HandleHeadSlot(MutationData data)
+        {
+            if (headSlot.IsAvailable)
+            {
+                headSlot.SetData(data);
+                return;
+            }
+        }
+
+        private void HandleTorsoSlot(MutationData data)
+        {
+            if (torsoSlot.IsAvailable)
+            {
+                torsoSlot.SetData(data);
+                return;
+            }
+        }
+
         public int GetTotalGeneticCost()
         {
             int sum = 0;
-            foreach (VialSlot s in bodyMutationSlots)
-            {
-                sum += s.MutationData.GeneticCost;
-            }
+            
 
             return sum;
         }
@@ -112,13 +160,7 @@ namespace ssj12062023
         {
             CreatureBlueprint blueprint = ScriptableObject.CreateInstance<CreatureBlueprint>();
 
-            blueprint.Name = "TODO - Get name from user input";
-            blueprint.BehaviourMutation = behaviourChipSlot.MutationData.UID;
             
-            foreach (VialSlot s in bodyMutationSlots)
-            {
-                blueprint.BodyMutations.Add(s.MutationData.UID);
-            }
 
             return blueprint;
         }

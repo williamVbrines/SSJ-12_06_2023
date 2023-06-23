@@ -9,7 +9,7 @@ namespace ssj12062023
     {
         public string Name;
         public int SlotsAvailable;
-        public Sprite Sprite;
+        public GameObject platform;
 
         protected static List<ConfigurationLayoutData> data = new();
 
