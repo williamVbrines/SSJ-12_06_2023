@@ -11,6 +11,7 @@ namespace ssj12062023
         public int SlotsAvailable;
         public GameObject platform;
 
+
         protected static List<ConfigurationLayoutData> data = new();
 
         public static void Load(string folder = "")

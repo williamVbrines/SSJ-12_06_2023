@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,10 +34,12 @@ namespace ssj12062023
         private void OnEnable()
         {
             typeDisplayContainer.OnOptionChanged += ChangeLayout;
+            typeDisplayContainer.OnOptionChanged += ChangeLayout;
         }
 
         private void OnDisable()
         {
+            typeDisplayContainer.OnOptionChanged -= ChangeLayout;
             typeDisplayContainer.OnOptionChanged -= ChangeLayout;
         }
 
@@ -44,7 +47,7 @@ namespace ssj12062023
         {
 
         }
-
+        
         private void ChangeLayout()
         {
                       
