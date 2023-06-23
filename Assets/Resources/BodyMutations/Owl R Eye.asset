@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
+  m_Name: Owl R Eye
+  m_EditorClassIdentifier: 
+  uid: f622ae23-f4c5-4f4d-8d10-774a147517c0
+  Name: Owl R Eye
+  Description: 
+  GeneticCost: 5
+  Icon: {fileID: 21300000, guid: 185de285b144f5b4b85a8703a6392d44, type: 3}
+  Type: 0
+  Bidirectionality: 1
+  Hp: 0

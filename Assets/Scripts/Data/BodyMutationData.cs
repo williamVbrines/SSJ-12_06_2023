@@ -8,7 +8,6 @@ namespace ssj12062023
     public class BodyMutationData : MutationData
     {
         public float Hp;
-        public BodyPartData BodyPart;
 
         protected static List<BodyMutationData> bodyMutationData = new();
 
