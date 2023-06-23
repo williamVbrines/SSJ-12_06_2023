@@ -1,37 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ssj12062023
 {
     public class GeneticLoadBar : MonoBehaviour
     {
         [SerializeField] private Configurator configurator;
-        [SerializeField] private int maxLoad = 100;
-        
-        private int currentLoad;
+        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private Slider fillBar;
 
         private void OnEnable()
         {
-            configurator.OnConfigurationChanged += AdjustLoad;
+            configurator.OnAddMutationVial += AdjustLoad;
+            configurator.OnRemoveMutationVial += AdjustLoad;
+            configurator.OnClearConfigurator += ResetBar;
         }
 
         private void OnDisable()
         {
-            configurator.OnConfigurationChanged -= AdjustLoad;
+            configurator.OnAddMutationVial -= AdjustLoad;
+            configurator.OnRemoveMutationVial -= AdjustLoad;
+            configurator.OnClearConfigurator -= ResetBar;
         }
 
         public void Init()
         {
-            currentLoad = 0;
+            fillBar.value = 0;
         }
 
-        private void AdjustLoad()
+        private void AdjustLoad(MutationData data)
         {
-            currentLoad = configurator.GetTotalGeneticCost();
+            fillBar.value = configurator.CurrentGeneticLoad;
+            text.text = $"Genetic Cost: {configurator.CurrentGeneticLoad}/{configurator.MaxGeneticLoad}";
+        }
 
-            // Adjust fill bar
-            Debug.Log($"Current Genetic Load: {currentLoad}/{maxLoad}");
+        private void ResetBar()
+        {
+            fillBar.value = 0;
+            text.text = $"Genetic Cost: 0/{configurator.MaxGeneticLoad}";
         }
     }
 }

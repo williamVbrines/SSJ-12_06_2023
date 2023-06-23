@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
+  m_Name: Monkey L Arm
+  m_EditorClassIdentifier: 
+  uid: 484d8f5a-4cbc-40d4-a920-bd1d179c6588
+  Name: Monkey L Arm
+  Description: 
+  GeneticCost: 10
+  Icon: {fileID: 21300000, guid: fec78a933ff5e91438892fdab5ffd0cf, type: 3}
+  Type: 3
+  Bidirectionality: 0
+  Hp: 0

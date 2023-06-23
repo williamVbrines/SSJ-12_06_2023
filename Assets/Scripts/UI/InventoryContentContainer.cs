@@ -85,6 +85,10 @@ namespace ssj12062023
                         int itemIndex = (displayStartIndex + i) % availableBodyMutationData.Count;
                         VialSlots[i].SetData(availableBodyMutationData[itemIndex]);
                     }
+                    else
+                    {
+                        VialSlots[i].ResetSlot();
+                    }
                 }
             }            
         }

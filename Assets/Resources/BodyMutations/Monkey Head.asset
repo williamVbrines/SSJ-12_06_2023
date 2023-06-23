@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
-  m_Name: Snail Torso Mutation
+  m_Name: Monkey Head
   m_EditorClassIdentifier: 
-  uid: 71e53ed5-cb60-4cba-ac3f-0f613cf7a8e9
-  Name: Snail
+  uid: 13abe4ac-0325-4947-b7e6-b5fd2efe57bb
+  Name: Monkey Head
   Description: 
-  GeneticCost: 1
-  Icon: {fileID: 21300000, guid: 38b53038b6a8b58488e30697896deb2d, type: 3}
+  GeneticCost: 20
+  Icon: {fileID: 21300000, guid: 52a26c1f522f3b347975e1dc81af83b2, type: 3}
+  Type: 1
+  Bidirectionality: 2
   Hp: 0
-  BodyPart: {fileID: 11400000, guid: 2dcc1446ec84521428880b1ed67df025, type: 2}
-  Type: 2

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
-  m_Name: Rat Torso Mutation
+  m_Name: Monkey R Leg
   m_EditorClassIdentifier: 
-  uid: f6bc619a-d2e5-4495-b937-589a890f0edc
-  Name: Rat
+  uid: 9d4248e4-a506-4ddd-a91a-455d7c2f7a44
+  Name: Monkey R Leg
   Description: 
-  GeneticCost: 0
-  Icon: {fileID: 21300000, guid: 38b53038b6a8b58488e30697896deb2d, type: 3}
+  GeneticCost: 10
+  Icon: {fileID: 21300000, guid: d5171f1a7a6b22b43a0852756aa441e9, type: 3}
+  Type: 4
+  Bidirectionality: 1
   Hp: 0
-  BodyPart: {fileID: 0}
-  Type: 2

@@ -3,44 +3,58 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ssj12062023
 {
+    [Serializable]
+    public struct ConfiguratorSlot
+    {
+        public string Name;
+        public EMutationType MutationType;
+        public EBidirectionality Bidirectionality;
+        public ConfiguratorVialSlot VialSlot;
+    }
+
     public class Configurator : MonoBehaviour, IDropHandler
     {
         [SerializeField] private TypeDisplayContainer typeDisplayContainer;
         [SerializeField] private int maxGeneticLoad = 100;
 
         [Space(20)]
-        [Header("Configurator Vial Slots")]
-        [SerializeField] private ConfiguratorVialSlot leftEyeSlot;
-        [SerializeField] private ConfiguratorVialSlot rightEyeSlot;
-        [SerializeField] private ConfiguratorVialSlot headSlot;
-        [SerializeField] private ConfiguratorVialSlot torsoSlot;
-        [SerializeField] private ConfiguratorVialSlot leftArmSlot;
-        [SerializeField] private ConfiguratorVialSlot rightArmSlot;
-        [SerializeField] private ConfiguratorVialSlot leftLegSlot;
-        [SerializeField] private ConfiguratorVialSlot rightLegSlot;
-        [SerializeField] private ConfiguratorVialSlot tailSlot;
-        [SerializeField] private ConfiguratorVialSlot behaviourChipSlot;
+        [SerializeField] private ConfiguratorSlot[] configuratorSlots;
 
         private int currentGeneticLoad;
         private ConfigurationLayoutData currentLayout;
 
-        public event Action OnConfigurationChanged;
+        public ConfiguratorSlot[] Slots => configuratorSlots;
+        public int MaxGeneticLoad => maxGeneticLoad;
+        public int CurrentGeneticLoad => currentGeneticLoad;
+
+        public event Action<MutationData> OnAddMutationVial;
+        public event Action<MutationData> OnRemoveMutationVial;
+        public event Action OnClearConfigurator;
 
         private void OnEnable()
         {
             typeDisplayContainer.OnOptionChanged += ChangeLayout;
-            typeDisplayContainer.OnOptionChanged += ChangeLayout;
+            
+            foreach (ConfiguratorSlot s in configuratorSlots)
+            {
+                s.VialSlot.OnRemoveVial += OnPlayerRemoveVial;
+            }
         }
 
         private void OnDisable()
         {
             typeDisplayContainer.OnOptionChanged -= ChangeLayout;
-            typeDisplayContainer.OnOptionChanged -= ChangeLayout;
+
+            foreach (ConfiguratorSlot s in configuratorSlots)
+            {
+                s.VialSlot.OnRemoveVial -= OnPlayerRemoveVial;
+            }
         }
 
         public void Init()
@@ -50,7 +64,7 @@ namespace ssj12062023
         
         private void ChangeLayout()
         {
-                      
+            
         }
 
         public void OnDrop(PointerEventData eventData)
@@ -67,43 +81,30 @@ namespace ssj12062023
 
                 if (WillNotExceedMaxGeneticLoad(copy.VialSlot.MutationData.GeneticCost))
                 {
-
-                    // TODO - Handle check if slots are available
-
                     copy.GetComponent<Draggable>().ValidDropArea();
 
-                    if (copy.VialSlot.MutationData.Type == EMutationType.Behaviour)
+                    foreach (ConfiguratorSlot s in configuratorSlots)
                     {
-                        // Set behaviour chip data 
-                        // Add behaviour chip sprite to configurator sprite
-                    }
-                    else
-                    {
-                        // Handle logic to place data onto correct slot on configurator
-                        switch (copy.VialSlot.MutationData.Type)
+                        if (s.MutationType == copy.VialSlot.MutationData.Type 
+                            && s.Bidirectionality == copy.VialSlot.MutationData.Bidirectionality)
                         {
-                            case EMutationType.Eyes:
-                                HandleEyeSlots(copy.VialSlot.MutationData);
-                                break;
-                            case EMutationType.Head:
-                                HandleHeadSlot(copy.VialSlot.MutationData);
-                                break;
-                            case EMutationType.Torso:
-                                
-                                break;
-                            case EMutationType.Arms:
-                                break;
-                            case EMutationType.Legs:
-                                break;
-                            case EMutationType.Tail:
-                                break;
-                            default:
-                                break;
+                            if (s.VialSlot.IsAvailable)
+                            {
+                                s.VialSlot.SetData(copy.VialSlot.MutationData);
+                                currentGeneticLoad = Mathf.Clamp(currentGeneticLoad + copy.VialSlot.MutationData.GeneticCost, 0, maxGeneticLoad);
+                                OnAddMutationVial?.Invoke(copy.VialSlot.MutationData);
+                                return;
+                            }
+                            else
+                            {
+                                currentGeneticLoad -= s.VialSlot.GeneticCost;
+                                s.VialSlot.SetData(copy.VialSlot.MutationData);
+                                currentGeneticLoad = Mathf.Clamp(currentGeneticLoad + copy.VialSlot.MutationData.GeneticCost, 0, maxGeneticLoad);
+                                OnAddMutationVial?.Invoke(copy.VialSlot.MutationData);
+                                return;
+                            }                            
                         }
                     }
-
-                    OnConfigurationChanged?.Invoke();
-                    Debug.Log("Added mutation to configurator...");
                 }
                 else
                 {
@@ -113,45 +114,10 @@ namespace ssj12062023
             }
         }
 
-        private void HandleEyeSlots(MutationData data)
+        private void OnPlayerRemoveVial(MutationData data)
         {
-            if (leftEyeSlot.IsAvailable)
-            {
-                leftEyeSlot.SetData(data);
-                return;
-            }
-
-            if (rightEyeSlot.IsAvailable)
-            {
-                rightEyeSlot.SetData(data);
-                return;
-            }
-        }
-
-        private void HandleHeadSlot(MutationData data)
-        {
-            if (headSlot.IsAvailable)
-            {
-                headSlot.SetData(data);
-                return;
-            }
-        }
-
-        private void HandleTorsoSlot(MutationData data)
-        {
-            if (torsoSlot.IsAvailable)
-            {
-                torsoSlot.SetData(data);
-                return;
-            }
-        }
-
-        public int GetTotalGeneticCost()
-        {
-            int sum = 0;
-            
-
-            return sum;
+            currentGeneticLoad -= data.GeneticCost;
+            OnRemoveMutationVial?.Invoke(data);
         }
 
         private bool WillNotExceedMaxGeneticLoad(int geneticCost)
@@ -159,13 +125,17 @@ namespace ssj12062023
             return currentGeneticLoad + geneticCost <= maxGeneticLoad;
         }
 
-        public CreatureBlueprint SaveCreature()
+        
+
+        public void RestartButton()
         {
-            CreatureBlueprint blueprint = ScriptableObject.CreateInstance<CreatureBlueprint>();
+            foreach (ConfiguratorSlot s in configuratorSlots)
+            {
+                s.VialSlot.Clear();
+            }
 
-            
-
-            return blueprint;
+            currentGeneticLoad = 0;
+            OnClearConfigurator?.Invoke();
         }
     }
 }

@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce849d8fea10fb4d94010ec2a4b0366, type: 3}
-  m_Name: Medium Agression
+  m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
+  m_Name: Owl L Eye
   m_EditorClassIdentifier: 
-  uid: 8d897574-aabd-4f30-9ab5-91b4e2eed98b
-  Name: 
+  uid: 8fdaa970-8dcd-4bfe-852e-ac234b4e6010
+  Name: Owl L Eye
   Description: 
-  GeneticCost: 0
-  Icon: {fileID: 21300000, guid: 38b53038b6a8b58488e30697896deb2d, type: 3}
-  Type: 6
-  Aggression: 0
+  GeneticCost: 5
+  Icon: {fileID: 21300000, guid: 9058a4fb37bc56345988522fa575b663, type: 3}
+  Type: 0
+  Bidirectionality: 0
+  Hp: 0

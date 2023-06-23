@@ -12,6 +12,8 @@ namespace ssj12062023
         public string BehaviourMutationsFolder = "BehaviourMutations";
         public string ConfigurationLayoutsFolder = "ConfigurationLayouts";
 
+        [SerializeField, ReadOnly] private List<CreatureBlueprint> creatures = new();
+
         protected override void Awake()
         {
             base.Awake();
@@ -23,6 +25,23 @@ namespace ssj12062023
             BodyMutationData.Load(BodyMutationsFolder);
             BehaviourMutationData.Load(BehaviourMutationsFolder);
             ConfigurationLayoutData.Load(ConfigurationLayoutsFolder);
+        }
+
+        public void SaveBlueprint(CreatureBlueprint blueprint)
+        {
+            creatures.Add(blueprint);
+        }
+
+        public CreatureBlueprint? GetBlueprint(string uid)
+        {
+            foreach (CreatureBlueprint blueprint in creatures)
+            {
+                if (blueprint.Uid == uid)
+                {
+                    return blueprint;
+                }
+            }
+            return null;
         }
     }
 }
