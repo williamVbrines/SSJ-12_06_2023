@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Rat R Eye
   Description: 
   GeneticCost: 5
-  Icon: {fileID: 21300000, guid: f554e920ab523cb4d8171604fc48be1b, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 0
   Bidirectionality: 1
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: f554e920ab523cb4d8171604fc48be1b, type: 3}

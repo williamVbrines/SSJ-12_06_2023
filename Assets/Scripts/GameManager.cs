@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject ingameMenu;
+    [SerializeField] private GameObject ingameUI;
 
     private bool isGameStarted = false;
     public bool IsGameStarted { get { return isGameStarted; } }
@@ -56,5 +58,10 @@ public class GameManager : MonoBehaviour
     public void OpenCloseIngameMenu()
     {
         ingameMenu.SetActive(!ingameMenu.activeSelf);
+    }
+
+    public void ShowHideInGameUI()
+    {
+        ingameUI.SetActive(!ingameUI.activeSelf);
     }
 }

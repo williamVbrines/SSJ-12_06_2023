@@ -1,5 +1,4 @@
 using System;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -124,8 +123,18 @@ namespace ssj12062023
         {
             return currentGeneticLoad + geneticCost <= maxGeneticLoad;
         }
-
         
+        public bool IsEmpty()
+        {
+            foreach (ConfiguratorSlot s in configuratorSlots)
+            {
+                if (!s.VialSlot.IsAvailable)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public void RestartButton()
         {

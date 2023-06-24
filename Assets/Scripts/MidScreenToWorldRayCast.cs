@@ -35,7 +35,7 @@ public class MidScreenToWorldRayCast : MonoBehaviour
 
                 lastHitRoof = hitRoof.transform;
 
-                if (lastHitRoof.transform.TryGetComponent<MaterialTransparency>(out MaterialTransparency materialTransparency))
+                if (hitRoof.transform && lastHitRoof.transform.TryGetComponent<MaterialTransparency>(out MaterialTransparency materialTransparency))
                 {
                     materialTransparency.MakeTransparent();
                 }

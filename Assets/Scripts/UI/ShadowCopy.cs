@@ -26,6 +26,7 @@ namespace ssj12062023
             this.vialSlot = vialSlot;
             title.text = vialSlot.Title.text;
             image.sprite = vialSlot.Image.sprite;
+            Utils.SetAlpha(image, 1);
         }
 
         public void Clear()
@@ -33,6 +34,7 @@ namespace ssj12062023
             this.vialSlot = null;
             title.text = string.Empty;
             image.sprite = emptySlot;
+            Utils.SetAlpha(image, 0);
         }
     }
 }
