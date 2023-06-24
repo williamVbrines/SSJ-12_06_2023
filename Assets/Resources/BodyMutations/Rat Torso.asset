@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Rat Torso
   Description: 
   GeneticCost: 20
-  Icon: {fileID: 21300000, guid: 9872444b71a9293489f6af556d841cb5, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 2
   Bidirectionality: 2
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: 9872444b71a9293489f6af556d841cb5, type: 3}

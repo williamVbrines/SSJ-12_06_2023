@@ -2349,6 +2349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeDisplayContainer: {fileID: 6901775239987845146}
   Configurator: {fileID: 6901775238148010886}
+  MutationsSelectedPanel: {fileID: 0}
 --- !u!1 &6901775238653336630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,7 +3149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6901775238905606052}
   - component: {fileID: 6901775238905606058}
-  - component: {fileID: 6901775238905606057}
   m_Layer: 5
   m_Name: Preview
   m_TagString: Untagged
@@ -3194,56 +3194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6901775238905606053}
   m_CullTransparentMesh: 1
---- !u!114 &6901775238905606057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6901775238905606053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad45ad434a62a8478e085a82bf23bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  configurator: {fileID: 6901775238148010886}
-  previews:
-  - Name: Tail
-    MutationType: 5
-    Bidirectionality: 2
-    Image: {fileID: 6901775239941814855}
-  - Name: R Leg
-    MutationType: 4
-    Bidirectionality: 1
-    Image: {fileID: 6901775239412029044}
-  - Name: L Leg
-    MutationType: 4
-    Bidirectionality: 0
-    Image: {fileID: 6901775238189039644}
-  - Name: L Arm
-    MutationType: 3
-    Bidirectionality: 0
-    Image: {fileID: 6901775238571135628}
-  - Name: Torso
-    MutationType: 2
-    Bidirectionality: 2
-    Image: {fileID: 6901775239922906858}
-  - Name: R Arm
-    MutationType: 3
-    Bidirectionality: 1
-    Image: {fileID: 6901775239164313615}
-  - Name: Head
-    MutationType: 1
-    Bidirectionality: 2
-    Image: {fileID: 6901775239982640283}
-  - Name: L Eye
-    MutationType: 0
-    Bidirectionality: 0
-    Image: {fileID: 6901775238272709315}
-  - Name: R Eye
-    MutationType: 0
-    Bidirectionality: 1
-    Image: {fileID: 6901775239545457938}
 --- !u!1 &6901775238988260701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +4066,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -6599,6 +6549,7 @@ GameObject:
   - component: {fileID: 6901775239946327815}
   - component: {fileID: 6901775239946327814}
   - component: {fileID: 6901775239946327813}
+  - component: {fileID: 1621223508886466025}
   m_Layer: 5
   m_Name: Preview Container
   m_TagString: Untagged
@@ -6693,6 +6644,57 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1621223508886466025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901775239946327810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad45ad434a62a8478e085a82bf23bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configurator: {fileID: 6901775238148010886}
+  statsPanel: {fileID: 0}
+  previews:
+  - Name: Tail
+    MutationType: 5
+    Bidirectionality: 2
+    Image: {fileID: 6901775239941814855}
+  - Name: R Leg
+    MutationType: 4
+    Bidirectionality: 1
+    Image: {fileID: 6901775239412029044}
+  - Name: L Leg
+    MutationType: 4
+    Bidirectionality: 0
+    Image: {fileID: 6901775238189039644}
+  - Name: L Arm
+    MutationType: 3
+    Bidirectionality: 0
+    Image: {fileID: 6901775238571135628}
+  - Name: Torso
+    MutationType: 2
+    Bidirectionality: 2
+    Image: {fileID: 6901775239922906858}
+  - Name: R Arm
+    MutationType: 3
+    Bidirectionality: 1
+    Image: {fileID: 6901775239164313615}
+  - Name: Head
+    MutationType: 1
+    Bidirectionality: 2
+    Image: {fileID: 6901775239982640283}
+  - Name: L Eye
+    MutationType: 0
+    Bidirectionality: 0
+    Image: {fileID: 6901775238272709315}
+  - Name: R Eye
+    MutationType: 0
+    Bidirectionality: 1
+    Image: {fileID: 6901775239545457938}
 --- !u!1 &6901775239972600304
 GameObject:
   m_ObjectHideFlags: 0

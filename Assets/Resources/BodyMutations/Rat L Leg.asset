@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Rat L Leg
   Description: 
   GeneticCost: 10
-  Icon: {fileID: 21300000, guid: a8e593e2eb93e7f4788a7d3c96e45afc, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 4
   Bidirectionality: 0
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: a8e593e2eb93e7f4788a7d3c96e45afc, type: 3}

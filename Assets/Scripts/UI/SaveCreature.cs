@@ -12,7 +12,7 @@ namespace ssj12062023
 
         public void SaveBlueprint()
         {
-            if (configurator.Slots.Length == 0)
+            if (configurator.IsEmpty())
             {
                 Debug.Log("No mutations added! Can't save an empty configuration!");
                 return;

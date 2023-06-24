@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Rat L Arm
   Description: 
   GeneticCost: 10
-  Icon: {fileID: 21300000, guid: 72a4336d368e0b64f9eaaafebf3b425c, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 3
   Bidirectionality: 0
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: 72a4336d368e0b64f9eaaafebf3b425c, type: 3}

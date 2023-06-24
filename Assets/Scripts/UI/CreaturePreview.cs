@@ -24,6 +24,7 @@ namespace ssj12062023
     public class CreaturePreview : MonoBehaviour
     {
         [SerializeField] private Configurator configurator;
+        [SerializeField] private GameObject statsPanel;
 
         [SerializeField] private BodyPartPreview[] previews;
 
@@ -47,7 +48,7 @@ namespace ssj12062023
             {
                 if (p.MutationType == data.Type && p.Bidirectionality == data.Bidirectionality)
                 {
-                    p.Image.sprite = data.Icon;
+                    p.Image.sprite = (data as BodyMutationData).BodyPart;
                     p.Image.color = new Color(p.Image.color.r, p.Image.color.g, p.Image.color.b, 1);
                     return;
                 }
@@ -73,6 +74,16 @@ namespace ssj12062023
             {
                 p.Clear();
             }
+        }
+
+        public void OpenCreatureStatsPanel()
+        {
+            statsPanel.SetActive(true);
+        }
+
+        public void CloseCreatureStatsPanel()
+        {
+            statsPanel.SetActive(false);
         }
     }
 }

@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Rat Head
   Description: 
   GeneticCost: 10
-  Icon: {fileID: 21300000, guid: 8980593eb2315e4478f0aca273855fc0, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 1
   Bidirectionality: 2
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: 8980593eb2315e4478f0aca273855fc0, type: 3}
