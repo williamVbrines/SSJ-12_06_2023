@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Monkey R Arm
   Description: 
   GeneticCost: 10
-  Icon: {fileID: 21300000, guid: 4cecb9c45bd61f2488ddc53e17c63eef, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 3
   Bidirectionality: 1
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: 4cecb9c45bd61f2488ddc53e17c63eef, type: 3}

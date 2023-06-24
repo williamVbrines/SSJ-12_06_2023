@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Rat Tail
   Description: 
   GeneticCost: 0
-  Icon: {fileID: 21300000, guid: 7d703908e0ffd5846a19bf21a1bdedf6, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 5
   Bidirectionality: 2
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: 7d703908e0ffd5846a19bf21a1bdedf6, type: 3}

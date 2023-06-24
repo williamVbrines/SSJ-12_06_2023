@@ -29,6 +29,7 @@ namespace ssj12062023
         {
             mutationData = data;
             image.sprite = data.Icon;
+            Utils.SetAlpha(image, 1);
             title.text = data.Name;
 
             shadowCopy.SetInfo(this);
@@ -39,7 +40,7 @@ namespace ssj12062023
             mutationData = null;
             title.text = string.Empty;
             image.sprite = emptySlot;
-
+            Utils.SetAlpha(image, 0);
             shadowCopy.Clear();
         }
     }

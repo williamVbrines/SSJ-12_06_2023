@@ -16,7 +16,8 @@ MonoBehaviour:
   Name: Monkey Head
   Description: 
   GeneticCost: 20
-  Icon: {fileID: 21300000, guid: 52a26c1f522f3b347975e1dc81af83b2, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 1
   Bidirectionality: 2
   Hp: 0
+  BodyPart: {fileID: 21300000, guid: 52a26c1f522f3b347975e1dc81af83b2, type: 3}
