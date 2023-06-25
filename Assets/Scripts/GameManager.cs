@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject ingameMenu;
     [SerializeField] private GameObject ingameUI;
+    [SerializeField] private GameObject creatureCreatorUI;
 
     private bool isGameStarted = false;
     public bool IsGameStarted { get { return isGameStarted; } }
@@ -63,5 +64,10 @@ public class GameManager : MonoBehaviour
     public void ShowHideInGameUI()
     {
         ingameUI.SetActive(!ingameUI.activeSelf);
+    }
+
+    public void ExitCreatureCreator()
+    {
+        creatureCreatorUI.SetActive(false);
     }
 }
