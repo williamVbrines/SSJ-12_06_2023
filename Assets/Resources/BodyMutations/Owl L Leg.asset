@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Owl L Leg
   m_EditorClassIdentifier: 
   uid: 1f368990-9e66-47bd-8aea-63e3a675ac30
-  Name: Owl L Leg
+  Name: Owl (L)
   Description: 
   GeneticCost: 15
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

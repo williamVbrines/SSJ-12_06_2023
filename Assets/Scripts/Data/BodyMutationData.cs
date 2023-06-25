@@ -9,6 +9,7 @@ namespace ssj12062023
     {
         public float Hp;
         public Sprite BodyPart;
+        public bool IsVolvy;
 
         protected static List<BodyMutationData> bodyMutationData = new();
 

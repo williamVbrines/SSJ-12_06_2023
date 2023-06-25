@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey R Arm
   m_EditorClassIdentifier: 
   uid: 35146124-0a2d-4d05-8903-5094c2a8c51f
-  Name: Monkey R Arm
+  Name: Monkey (R)
   Description: 
   GeneticCost: 10
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

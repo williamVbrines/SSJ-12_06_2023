@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rat R Arm
   m_EditorClassIdentifier: 
   uid: 2473ecd4-51ed-4cd0-bddc-7c5c4213cd9c
-  Name: Rat R Arm
+  Name: Rat (R)
   Description: 
   GeneticCost: 10
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

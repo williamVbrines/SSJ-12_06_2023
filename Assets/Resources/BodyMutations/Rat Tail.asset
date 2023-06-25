@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Rat Tail
   m_EditorClassIdentifier: 
   uid: dc4a157c-f744-4987-b5bf-e09c36a42b41
-  Name: Rat Tail
+  Name: Rat
   Description: 
-  GeneticCost: 0
+  GeneticCost: 5
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 5
   Bidirectionality: 2
