@@ -14,6 +14,7 @@ namespace ssj12062023
         {
             if (configurator.IsEmpty())
             {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.SaveFailedSFX);
                 Debug.Log("No mutations added! Can't save an empty configuration!");
                 return;
             }
@@ -35,6 +36,7 @@ namespace ssj12062023
                 }
             }
 
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.SaveSuccessSFX);
             DataManager.Instance.SaveBlueprint(blueprint);
             Debug.Log("Creature saved!");
         }

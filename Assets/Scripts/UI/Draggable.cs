@@ -26,6 +26,7 @@ namespace ssj12062023
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.MutationDragBeginSFX);
             originalPosition = rectTransform.anchoredPosition;
             canvasGroup.alpha = .6f;
             canvasGroup.blocksRaycasts = false;
@@ -60,6 +61,8 @@ namespace ssj12062023
 
         private IEnumerator LerpToOriginalPosition()
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.MutationDropFailSFX);
+
             float elapsedTime = 0;           
 
             while (elapsedTime < lerpTime)
@@ -81,6 +84,7 @@ namespace ssj12062023
         // Call this function when the card is dropped in a valid area
         public void ValidDropArea()
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.MutationDropSuccesSFX);
             isDroppedInValidArea = true;
         }
     }

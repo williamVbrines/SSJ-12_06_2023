@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using ssj12062023;
 
 public class CameraMovement : MonoBehaviour
 {

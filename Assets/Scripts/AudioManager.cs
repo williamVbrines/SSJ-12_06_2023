@@ -14,9 +14,21 @@ namespace ssj12062023
 
         [SerializeField] private AudioClip titleLoop;
         [SerializeField] private AudioClip mainLoop;
+        [SerializeField] private AudioClip creatureCreatorOpenSFX;
+        [SerializeField] private AudioClip saveFailedSFX;
+        [SerializeField] private AudioClip saveSuccessSFX;
+        [SerializeField] private AudioClip mutationDragBeginSFX;
+        [SerializeField] private AudioClip mutationDropFailSFX;
+        [SerializeField] private AudioClip mutationDropSuccesSFX;
 
         public AudioClip TitleLoop { get { return titleLoop; } }
         public AudioClip MainLoop { get { return mainLoop; } }
+        public AudioClip CreatureCreatorOpenSFX { get { return creatureCreatorOpenSFX; } }
+        public AudioClip SaveFailedSFX { get { return saveFailedSFX; } }
+        public AudioClip SaveSuccessSFX { get { return saveSuccessSFX; } }
+        public AudioClip MutationDragBeginSFX { get { return mutationDragBeginSFX; } }
+        public AudioClip MutationDropFailSFX { get { return mutationDropFailSFX; } }
+        public AudioClip MutationDropSuccesSFX { get { return mutationDropSuccesSFX; } }
 
         protected override void Awake()
         {
@@ -44,6 +56,11 @@ namespace ssj12062023
         {
             audioSource.clip = mainLoop;
             audioSource.Play();
+        }
+
+        public void PlaySFX(AudioClip playedSFX)
+        {
+            audioSource.PlayOneShot(playedSFX);
         }
     }
 }
