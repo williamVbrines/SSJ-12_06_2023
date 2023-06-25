@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Owl R Eye
   m_EditorClassIdentifier: 
   uid: f622ae23-f4c5-4f4d-8d10-774a147517c0
-  Name: Owl R Eye
+  Name: Owl (R)
   Description: 
   GeneticCost: 5
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

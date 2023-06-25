@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rat Torso
   m_EditorClassIdentifier: 
   uid: 924dc37e-c3a5-4fc3-99d3-badebeed52ef
-  Name: Rat Torso
+  Name: Rat
   Description: 
   GeneticCost: 20
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

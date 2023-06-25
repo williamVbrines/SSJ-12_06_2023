@@ -26,7 +26,6 @@ namespace ssj12062023
         [SerializeField] private ConfiguratorSlot[] configuratorSlots;
 
         private int currentGeneticLoad;
-        private ConfigurationLayoutData currentLayout;
 
         public ConfiguratorSlot[] Slots => configuratorSlots;
         public int MaxGeneticLoad => maxGeneticLoad;

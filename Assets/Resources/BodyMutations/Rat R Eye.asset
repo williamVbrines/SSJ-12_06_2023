@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rat R Eye
   m_EditorClassIdentifier: 
   uid: c6948328-64cf-410f-8d5c-0c068d2afd30
-  Name: Rat R Eye
+  Name: Rat (R)
   Description: 
   GeneticCost: 5
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

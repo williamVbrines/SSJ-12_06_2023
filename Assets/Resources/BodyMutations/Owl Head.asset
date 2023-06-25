@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Owl Head
   m_EditorClassIdentifier: 
   uid: d89e46f7-fde9-44f9-921a-ff9fc7103e6a
-  Name: Owl Head
+  Name: Owl
   Description: 
   GeneticCost: 20
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

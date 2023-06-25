@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey L Leg
   m_EditorClassIdentifier: 
   uid: fd860454-e454-4aeb-961c-84477b2767ad
-  Name: Monkey L Leg
+  Name: Monkey (L)
   Description: 
   GeneticCost: 10
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

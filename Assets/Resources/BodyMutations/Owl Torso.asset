@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Owl Torso
   m_EditorClassIdentifier: 
   uid: f0fb3abd-c324-4679-bc27-6d580b137036
-  Name: Owl Torso
+  Name: Owl
   Description: 
   GeneticCost: 20
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

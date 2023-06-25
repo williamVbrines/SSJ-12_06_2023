@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rat L Leg
   m_EditorClassIdentifier: 
   uid: 707dc4df-017f-4539-a25e-48c1935ec63a
-  Name: Rat L Leg
+  Name: Rat (L)
   Description: 
   GeneticCost: 10
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey Torso
   m_EditorClassIdentifier: 
   uid: d4214c9f-f3df-487e-9316-092de01252c4
-  Name: Monkey Torso
+  Name: Monkey
   Description: 
   GeneticCost: 20
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

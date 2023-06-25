@@ -10,7 +10,6 @@ namespace ssj12062023
         [Header("Resources Sub-folder")]
         public string BodyMutationsFolder = "BodyMutations";
         public string BehaviourMutationsFolder = "BehaviourMutations";
-        public string ConfigurationLayoutsFolder = "ConfigurationLayouts";
 
         [SerializeField, ReadOnly] private List<CreatureBlueprint> creatures = new();
 
@@ -24,7 +23,6 @@ namespace ssj12062023
         {
             BodyMutationData.Load(BodyMutationsFolder);
             BehaviourMutationData.Load(BehaviourMutationsFolder);
-            ConfigurationLayoutData.Load(ConfigurationLayoutsFolder);
         }
 
         public void SaveBlueprint(CreatureBlueprint blueprint)
