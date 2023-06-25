@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey R Eye
   m_EditorClassIdentifier: 
   uid: 18781e8c-1be2-494f-95b1-e6af7fc586d0
-  Name: Monkey R Eye
+  Name: Monkey (R)
   Description: 
   GeneticCost: 5
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
+  m_Name: Sheep Head
+  m_EditorClassIdentifier: 
+  uid: 9edc0d36-4af1-42e7-b3a7-0f1d71c8f4ab
+  Name: Sheep
+  Description: 
+  GeneticCost: 20
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
+  Type: 1
+  Bidirectionality: 2
+  Hp: 0
+  BodyPart: {fileID: 21300000, guid: 6cb9c653ce785f042aa0bdf2c42e0262, type: 3}

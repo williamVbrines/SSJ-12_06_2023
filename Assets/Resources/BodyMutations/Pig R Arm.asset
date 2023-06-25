@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9acf3ea5dd5ae74d8ac7a6fe15e6056, type: 3}
+  m_Name: Pig R Arm
+  m_EditorClassIdentifier: 
+  uid: 76ab0d36-ffc3-4fd1-9468-1dc375669978
+  Name: Pig (R)
+  Description: 
+  GeneticCost: 10
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
+  Type: 3
+  Bidirectionality: 1
+  Hp: 0
+  BodyPart: {fileID: 21300000, guid: 2b9034a5c461b6a4697d7a76942556e6, type: 3}

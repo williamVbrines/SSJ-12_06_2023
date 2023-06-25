@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Owl L Arm
   m_EditorClassIdentifier: 
   uid: d84a0f15-c008-4da7-a204-2f38f5144ac5
-  Name: Owl L Wing
+  Name: Owl (L)
   Description: 
   GeneticCost: 10
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

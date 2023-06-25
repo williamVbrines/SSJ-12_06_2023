@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey Head
   m_EditorClassIdentifier: 
   uid: 13abe4ac-0325-4947-b7e6-b5fd2efe57bb
-  Name: Monkey Head
+  Name: Monkey
   Description: 
   GeneticCost: 20
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}

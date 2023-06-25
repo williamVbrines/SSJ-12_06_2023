@@ -26,7 +26,7 @@ namespace ssj12062023
 
         [Space(20)]
 
-        [Range(1, 50)]
+        [Range(1, 100)]
         public int GeneticCost;
 
         public Sprite Icon;
