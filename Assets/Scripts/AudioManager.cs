@@ -2,56 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TooLoo;
 
-public class AudioManager : MonoBehaviour
+namespace ssj12062023
 {
-    public static AudioManager Instance { get; private set; }
-
-    private AudioSource audioSource;
-
-    [SerializeField] private Camera mainCamera;
-
-    [SerializeField] private AudioClip titleLoop;
-    [SerializeField] private AudioClip mainLoop;
-
-    public AudioClip TitleLoop { get { return titleLoop; } }
-    public AudioClip MainLoop { get { return mainLoop; } }
-
-    private void Awake()
+    public class AudioManager : Singleton<AudioManager>
     {
-        CreateInstance();
-        audioSource = GetComponent<AudioSource>();
-    }
+        private AudioSource audioSource;
 
-    private void Update()
-    {
-        transform.position = mainCamera.transform.position;
-    }
+        [SerializeField] private Camera mainCamera;
 
+        [SerializeField] private AudioClip titleLoop;
+        [SerializeField] private AudioClip mainLoop;
 
-    public void VolumeUp()
-    {
-        audioSource.volume += 0.1f;
-    }
+        public AudioClip TitleLoop { get { return titleLoop; } }
+        public AudioClip MainLoop { get { return mainLoop; } }
 
-    public void VolumeDown()
-    {
-        audioSource.volume -= 0.1f;
-    }
-
-    private void CreateInstance()
-    {
-        if (Instance != null)
+        protected override void Awake()
         {
-            Destroy(gameObject);
-            return;
+            base.Awake();
+            audioSource = GetComponent<AudioSource>();
         }
-        Instance = this;
-    }
 
-    public void ChangeToMainLoop()
-    {
-        audioSource.clip = mainLoop;
-        audioSource.Play();
+        private void Update()
+        {
+            transform.position = mainCamera.transform.position;
+        }
+
+
+        public void VolumeUp()
+        {
+            audioSource.volume += 0.1f;
+        }
+
+        public void VolumeDown()
+        {
+            audioSource.volume -= 0.1f;
+        }
+
+        public void ChangeToMainLoop()
+        {
+            audioSource.clip = mainLoop;
+            audioSource.Play();
+        }
     }
 }
