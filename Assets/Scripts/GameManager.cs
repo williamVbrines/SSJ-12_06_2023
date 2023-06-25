@@ -2,72 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TooLoo;
 
-public class GameManager : MonoBehaviour
+namespace ssj12062023
 {
-    public static GameManager Instance { get; private set; }
 
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject ingameMenu;
-    [SerializeField] private GameObject ingameUI;
-    [SerializeField] private GameObject creatureCreatorUI;
-
-    private bool isGameStarted = false;
-    public bool IsGameStarted { get { return isGameStarted; } }
-
-    private void Awake()
+    public class GameManager : Singleton<GameManager>
     {
-        CreateInstance();
+        [SerializeField] private GameObject mainMenu;
+        [SerializeField] private GameObject ingameMenu;
+        [SerializeField] private GameObject ingameUI;
+        [SerializeField] private GameObject creatureCreatorUI;
 
-        Time.timeScale = 0f;
-    }
+        private bool isGameStarted = false;
+        public bool IsGameStarted { get { return isGameStarted; } }
 
-    public void StartPauseGame()
-    {
-        isGameStarted = !isGameStarted;
-
-        if (isGameStarted)
+        protected override void Awake()
         {
-            Time.timeScale = 1;
+            base.Awake();
+            Time.timeScale = 0f;
         }
-        else if (!isGameStarted)
+
+        public void StartPauseGame()
         {
-            Time.timeScale = 0;
-        }
-    }
+            isGameStarted = !isGameStarted;
 
-    private void CreateInstance()
-    {
-        if (Instance != null)
+            if (isGameStarted)
+            {
+                Time.timeScale = 1;
+            }
+            else if (!isGameStarted)
+            {
+                Time.timeScale = 0;
+            }
+        }
+
+        public void ReverseMainMenuState()
         {
-            Destroy(gameObject);
-            return;
+            mainMenu.SetActive(!mainMenu.activeSelf);
         }
-        Instance = this;
-    }
 
-    public void ReverseMainMenuState()
-    {
-        mainMenu.SetActive(!mainMenu.activeSelf);
-    }
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+        public void OpenCloseIngameMenu()
+        {
+            ingameMenu.SetActive(!ingameMenu.activeSelf);
+        }
 
-    public void OpenCloseIngameMenu()
-    {
-        ingameMenu.SetActive(!ingameMenu.activeSelf);
-    }
+        public void ShowHideInGameUI()
+        {
+            ingameUI.SetActive(!ingameUI.activeSelf);
+        }
 
-    public void ShowHideInGameUI()
-    {
-        ingameUI.SetActive(!ingameUI.activeSelf);
-    }
+        public void ExitCreatureCreator()
+        {
+            creatureCreatorUI.SetActive(false);
+        }
 
-    public void ExitCreatureCreator()
-    {
-        creatureCreatorUI.SetActive(false);
+        public void ShowCreatureCreator()
+        {
+            creatureCreatorUI.SetActive(true);
+        }
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ssj12062023;
 
 public class ScreenToWorldRayCast : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ScreenToWorldRayCast : MonoBehaviour
     private Transform selectedTransform;
     public Transform SelectedTransform { get { return selectedTransform; } }
 
-    int layerMask;
+    private int layerMask;
+
+    private string creatureCreatorOpenerTag = "CreatureCreatorOpener";
 
     private void Awake()
     {
@@ -56,6 +59,12 @@ public class ScreenToWorldRayCast : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && CastRay(out selectedTransform))
             {
+                if(selectedTransform.tag == creatureCreatorOpenerTag)
+                {
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.CreatureCreatorOpenSFX);
+                    GameManager.Instance.ShowCreatureCreator();
+                }
+
                 Debug.Log(SelectedTransform);
             }
         }
