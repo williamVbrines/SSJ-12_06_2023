@@ -65,6 +65,11 @@ namespace ssj12062023
                         GameManager.Instance.SignalOpenCreatureCreator();
                     }
 
+                    if (selectedTransform.tag == "Memory")
+                    {
+                        GameManager.Instance.SignalActivateMemory(selectedTransform);
+                    }
+
                     Debug.Log(SelectedTransform);
                 }
             }
