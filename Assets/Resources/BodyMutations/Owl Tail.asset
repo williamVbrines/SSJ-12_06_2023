@@ -15,9 +15,10 @@ MonoBehaviour:
   uid: e7aa472b-51b6-409a-9ec3-87beae721871
   Name: Owl
   Description: 
-  GeneticCost: 10
+  GeneticCost: 5
   Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 5
   Bidirectionality: 2
   Hp: 0
   BodyPart: {fileID: 21300000, guid: e4d116316b30ba34695cee93ffe60a50, type: 3}
+  IsVolvy: 0

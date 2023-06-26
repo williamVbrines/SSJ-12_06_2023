@@ -17,6 +17,7 @@ namespace ssj12062023
         private int layerMask;
 
         private string creatureCreatorOpenerTag = "CreatureCreatorOpener";
+        private string memoryTag = "Memory";
 
         private void Awake()
         {
@@ -30,7 +31,7 @@ namespace ssj12062023
             SelectHitTransform();
         }
 
-        private Transform CastRay(out Transform hitTransform)
+        private Transform CastRay()
         {
             if (!IsMouseOverUI())
             {
@@ -38,18 +39,15 @@ namespace ssj12062023
 
                 if (Physics.Raycast(screenToWorldRay, out RaycastHit hit, 500f, layerMask))
                 {
-                    hitTransform = hit.transform;
                     return hit.transform;
                 }
                 else
                 {
-                    hitTransform = null;
                     return null;
                 }
             }
             else
             {
-                hitTransform = null;
                 return null;
             }
         }
@@ -58,14 +56,27 @@ namespace ssj12062023
         {
             if (GameManager.Instance.IsGameStarted)
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0) && CastRay(out selectedTransform))
+                Transform hoverOverTransform = CastRay();
+                if (hoverOverTransform?.tag == creatureCreatorOpenerTag
+                    || hoverOverTransform?.tag == memoryTag)
                 {
+                    CustomCursor.Instance.UseSelectableCursor();
+                }
+                else
+                {
+                    CustomCursor.Instance.UseDefaultCursor();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Mouse0) && hoverOverTransform != null)
+                {
+                    selectedTransform = hoverOverTransform;
+
                     if (selectedTransform.tag == creatureCreatorOpenerTag)
                     {
                         GameManager.Instance.SignalOpenCreatureCreator();
                     }
 
-                    if (selectedTransform.tag == "Memory")
+                    if (selectedTransform.tag == memoryTag)
                     {
                         GameManager.Instance.SignalActivateMemory(selectedTransform);
                     }
