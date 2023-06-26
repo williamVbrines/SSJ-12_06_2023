@@ -88,5 +88,23 @@ namespace ssj12062023
             fadeCreatureCreator.FadeUI();
             //creatureCreatorUI.SetActive(true);
         }
+
+        public void ShowMemoryDisplay(MemoryData data)
+        {
+            memoryDisplay.GetComponent<MemoryDisplay>().SetData(data);
+            memoryDisplay.SetActive(true);
+        }
+
+        public void CloseMemoryDisplay()
+        {
+            memoryDisplay.SetActive(false);
+            memoryDisplay.GetComponent<MemoryDisplay>().ClearData();
+            OnCloseMemoryDisplay?.Invoke();
+        }
+
+        public void SignalActivateMemory(Transform memory)
+        {
+            OnClickMemory?.Invoke(memory);
+        }
     }
 }
