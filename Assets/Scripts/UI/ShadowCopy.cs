@@ -11,10 +11,17 @@ namespace ssj12062023
         [SerializeField] private TextMeshProUGUI title;
         [SerializeField] private Image image;
 
+        private GameObject imageGameObject;
+
         private VialSlot vialSlot;
         private Sprite emptySlot;
 
         public VialSlot VialSlot => vialSlot;
+
+        private void Awake()
+        {
+            imageGameObject = image.gameObject;
+        }
 
         private void OnEnable()
         {
@@ -35,6 +42,11 @@ namespace ssj12062023
             title.text = string.Empty;
             image.sprite = emptySlot;
             Utils.SetAlpha(image, 0);
+        }
+
+        public GameObject GetImageGameObject()
+        {
+            return imageGameObject;
         }
     }
 }
