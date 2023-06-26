@@ -14,6 +14,7 @@ namespace ssj12062023
         [SerializeField] private GameObject ingameUI;
         [SerializeField] private GameObject creatureCreatorUI;
         [SerializeField] private UIFadeInOut fadeCreatureCreator;
+        [SerializeField] private GameObject memoryDisplay;
 
         [Header("Audio")]
         [SerializeField] private AudioClip openCreatureCreatorSFX;
@@ -21,6 +22,9 @@ namespace ssj12062023
 
         public event Action OnClickCreatureCreator;
         public event Action OnCloseCreatureCreator;
+
+        public event Action<Transform> OnClickMemory;
+        public event Action OnCloseMemoryDisplay;
 
         private bool isGameStarted = false;
         public bool IsGameStarted { get { return isGameStarted; } }
@@ -77,13 +81,12 @@ namespace ssj12062023
         {
             OnClickCreatureCreator?.Invoke();
         }
-        
+
         public void ShowCreatureCreator()
         {
             AudioManager.Instance.PlaySFX(openCreatureCreatorSFX);
             fadeCreatureCreator.FadeUI();
             //creatureCreatorUI.SetActive(true);
         }
-        
     }
 }

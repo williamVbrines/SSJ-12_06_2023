@@ -20,17 +20,24 @@ namespace ssj12062023
 
         private Vector3 destination;
         private bool isWorking;
+        private bool isReading;
 
         private void OnEnable()
         {
             GameManager.Instance.OnClickCreatureCreator += InteractCreatureCreator;
+            GameManager.Instance.OnClickMemory += InteractMemory;
             GameManager.Instance.OnCloseCreatureCreator += ResetRobot;
+            GameManager.Instance.OnCloseMemoryDisplay += ResetRobot;
         }
+
+        
 
         private void OnDisable()
         {
             GameManager.Instance.OnClickCreatureCreator -= InteractCreatureCreator;
+            GameManager.Instance.OnClickMemory -= InteractMemory;
             GameManager.Instance.OnCloseCreatureCreator -= ResetRobot;
+            GameManager.Instance.OnCloseMemoryDisplay -= ResetRobot;
         }
 
         // Start is called before the first frame update
@@ -100,6 +107,14 @@ namespace ssj12062023
             return finalPosition;
         }
 
+        private void InteractMemory(Transform memory)
+        {
+            StopAllCoroutines();
+            destination = memory.position;
+            navigator.SetDestination(destination);
+            Debug.Log("Going to interact with memory");
+        }
+
         public void InteractCreatureCreator()
         {
             StopAllCoroutines();
@@ -133,6 +148,20 @@ namespace ssj12062023
                 Debug.Log("Reached Configurator");
                 FaceTowards(configurator);
                 GameManager.Instance.ShowCreatureCreator();
+                return;
+            }
+
+            if (other.gameObject.tag == "Memory" && !isWorking)
+            {
+                other.GetComponent<Memory>().ActivateMemoryDisplay();
+            }            
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.tag == "Memory" && !isWorking)
+            {
+                other.GetComponent<Memory>().DeactivateMemoryDisplay();
             }
         }
     }

@@ -130,8 +130,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0006b1c713ac565498cd3ad9ad6c0e92, type: 3}
   - {fileID: 8300000, guid: 70ed3ca9838168a43978b6964a3d65d2, type: 3}
   audioSource: {fileID: 6328114382322801231}
-  minDelay: 2
-  maxDelay: 8
+  minDelay: 5
+  maxDelay: 15
 --- !u!82 &6328114382322801231
 AudioSource:
   m_ObjectHideFlags: 0
