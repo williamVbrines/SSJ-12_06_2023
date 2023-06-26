@@ -62,7 +62,7 @@ namespace ssj12062023
                 {
                     if (selectedTransform.tag == creatureCreatorOpenerTag)
                     {
-                        GameManager.Instance.ShowCreatureCreator();
+                        GameManager.Instance.SignalOpenCreatureCreator();
                     }
 
                     Debug.Log(SelectedTransform);
