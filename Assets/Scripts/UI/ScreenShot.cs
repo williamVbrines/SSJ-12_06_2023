@@ -56,7 +56,7 @@ namespace ssj12062023
             }";
 
             // Call the JavaScript function
-            Application.ExternalEval(jsFunction + $"saveAsFile('snapshot.png', '{base64Image}');");
+            Application.ExternalEval(jsFunction + $"saveAsFile('creature_snapshot.png', '{base64Image}');");
         }
     }
 }
