@@ -1250,6 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 3
   mutationVialSprite: {fileID: 2459972594091701524}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &2459972592681221772
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 3
   mutationVialSprite: {fileID: 2459972593327448726}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &2459972593521658891
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,6 +5430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 3
   mutationVialSprite: {fileID: 2459972593293611608}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &2459972594013131383
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,6 +5925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 0
   mutationVialSprite: {fileID: 2459972592495407140}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &2459972594091701524
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,6 +6843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 5
   mutationVialSprite: {fileID: 3594679311487777683}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &3594679310814275600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7007,6 +7012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 0
   mutationVialSprite: {fileID: 3594679311863994955}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &3594679311061951645
 GameObject:
   m_ObjectHideFlags: 0
@@ -7099,6 +7105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 3
   mutationVialSprite: {fileID: 3594679311262190619}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &3594679311104863715
 GameObject:
   m_ObjectHideFlags: 0
@@ -7191,6 +7198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 1
   mutationVialSprite: {fileID: 3594679310445893665}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &3594679311231999605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,6 +7291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 2
   mutationVialSprite: {fileID: 3594679310814275600}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &3594679311262190619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7420,6 +7429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationType: 6
   mutationVialSprite: {fileID: 5030358948066548156}
+  removeVialSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
 --- !u!1 &3594679311487777683
 GameObject:
   m_ObjectHideFlags: 0
@@ -8034,6 +8044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeDisplayContainer: {fileID: 9073517438621889807}
   maxGeneticLoad: 100
+  restartSFX: {fileID: 8300000, guid: b0249425ba7d7674ebcae86a4309f74b, type: 3}
   configuratorSlots:
   - Name: Head Slot
     MutationType: 1
@@ -9449,6 +9460,8 @@ MonoBehaviour:
   TypeDisplayContainer: {fileID: 9073517438621889807}
   Configurator: {fileID: 9073517436840926867}
   MutationsSelectedPanel: {fileID: 2459972593461822612}
+  openStatsPanelSFX: {fileID: 8300000, guid: d23a2a3a63c23a94fa2181464cf76b7a, type: 3}
+  closeStatsPanelSFX: {fileID: 8300000, guid: 4132f6f0723f98a4b8b6274a8b327571, type: 3}
 --- !u!1 &9073517437348829707
 GameObject:
   m_ObjectHideFlags: 0
@@ -11602,7 +11615,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12412,6 +12425,8 @@ MonoBehaviour:
   - Legs
   - Tail
   - Behaviour
+  rightArrowSFX: {fileID: 8300000, guid: 3e5686bb099fdc142b69be5cc2c9e3fc, type: 3}
+  leftArrowSFX: {fileID: 8300000, guid: dbe26790a4181c54897410d640804b5b, type: 3}
 --- !u!1 &9073517438238305765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12689,6 +12704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TypeDisplayContainer: {fileID: 9073517438192825449}
+  rightArrowSFX: {fileID: 8300000, guid: 3e5686bb099fdc142b69be5cc2c9e3fc, type: 3}
+  leftArrowSFX: {fileID: 8300000, guid: dbe26790a4181c54897410d640804b5b, type: 3}
   VialSlots:
   - {fileID: 5168334872070512391}
   - {fileID: 5168334871569678116}
@@ -13538,6 +13555,8 @@ MonoBehaviour:
   - Tripod
   - Quadrupod
   - Tetrapod
+  rightArrowSFX: {fileID: 8300000, guid: 3e5686bb099fdc142b69be5cc2c9e3fc, type: 3}
+  leftArrowSFX: {fileID: 8300000, guid: dbe26790a4181c54897410d640804b5b, type: 3}
 --- !u!1 &9073517438640215269
 GameObject:
   m_ObjectHideFlags: 0
@@ -13946,6 +13965,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configurator: {fileID: 9073517436840926867}
   statsPanel: {fileID: 2459972593372113518}
+  openStatsPanelSFX: {fileID: 8300000, guid: d23a2a3a63c23a94fa2181464cf76b7a, type: 3}
+  closeStatsPanelSFX: {fileID: 8300000, guid: 4132f6f0723f98a4b8b6274a8b327571, type: 3}
   previews:
   - Name: Tail
     MutationType: 5
@@ -14529,6 +14550,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configurator: {fileID: 9073517436840926867}
   customName: {fileID: 9073517437135637032}
+  saveSuccess: {fileID: 8300000, guid: 46feaf81a9ccf9f4d9fa865cc2b612f4, type: 3}
+  saveFailed: {fileID: 8300000, guid: d3fdef9039a6afa4f85dbf8c48dd2018, type: 3}
+  voiceActorLines:
+  - {fileID: 8300000, guid: 70711bda3b7d9e043a922ff2fffd3960, type: 3}
+  - {fileID: 8300000, guid: 884142c482ab4964e99edf11da03049e, type: 3}
+  - {fileID: 8300000, guid: a4082b92311c3f445adb3810740a863f, type: 3}
 --- !u!1001 &2459972592296144211
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,7 +9,16 @@ namespace ssj12062023
     public class InventoryContentContainer : MonoBehaviour
     {
         public TypeDisplayContainer TypeDisplayContainer;
+
+        [Space(10)]
+        [Header("Audio")]
+        [SerializeField] private AudioClip rightArrowSFX;
+        [SerializeField] private AudioClip leftArrowSFX;
+
+        [Space(10)]
         public VialSlot[] VialSlots;
+
+        
 
         private int displayStartIndex;
         private readonly List<MutationData> availableBodyMutationData = new();
@@ -103,6 +112,8 @@ namespace ssj12062023
 
         public void OnRightButton()
         {
+            AudioManager.Instance.PlaySFX(rightArrowSFX);
+
             if (availableBodyMutationData.Count == 0 
                 || availableBodyMutationData.Count <= VialSlots.Length) return;
 
@@ -112,6 +123,8 @@ namespace ssj12062023
 
         public void OnLeftButton()
         {
+            AudioManager.Instance.PlaySFX(leftArrowSFX);
+
             if (availableBodyMutationData.Count == 0
                 || availableBodyMutationData.Count <= VialSlots.Length) return;
 

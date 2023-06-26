@@ -561,6 +561,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpTime: 1
+  mutationDragBeginSFX: {fileID: 8300000, guid: f1c785661ab26ee468b464fd42466a19,
+    type: 3}
+  mutationDropFailSFX: {fileID: 8300000, guid: b2dc1e953f008da43b89a906b27f41b3, type: 3}
+  mutationDropSuccesSFX: {fileID: 8300000, guid: 672f0d83f76caa64ab653098f2f975ea,
+    type: 3}
+  hoverOnMutationSFX: {fileID: 8300000, guid: de5a821cb078e234a9bb44aba50ff0b7, type: 3}
 --- !u!114 &8566211463685948766
 MonoBehaviour:
   m_ObjectHideFlags: 0

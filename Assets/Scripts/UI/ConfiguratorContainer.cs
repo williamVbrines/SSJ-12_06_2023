@@ -10,6 +10,11 @@ namespace ssj12062023
         public Configurator Configurator;
         public GameObject MutationsSelectedPanel;
 
+        [Space(20)]
+        [Header("Audio")]
+        [SerializeField] private AudioClip openStatsPanelSFX;
+        [SerializeField] private AudioClip closeStatsPanelSFX;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -19,11 +24,13 @@ namespace ssj12062023
 
         public void OpenMutationsSelectedPanel()
         {
+            AudioManager.Instance.PlaySFX(openStatsPanelSFX);
             MutationsSelectedPanel.SetActive(true);
         }
 
         public void CloseMutationsSelectedPanel()
         {
+            AudioManager.Instance.PlaySFX(closeStatsPanelSFX);
             MutationsSelectedPanel.SetActive(false);
         }
     }

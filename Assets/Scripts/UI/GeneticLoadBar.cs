@@ -34,13 +34,13 @@ namespace ssj12062023
         private void AdjustLoad(MutationData data)
         {
             fillBar.value = configurator.CurrentGeneticLoad;
-            text.text = $"Genetic Cost: {configurator.CurrentGeneticLoad}/{configurator.MaxGeneticLoad}";
+            text.text = $"Genetic Load: {configurator.CurrentGeneticLoad}/{configurator.MaxGeneticLoad}";
         }
 
         private void ResetBar()
         {
             fillBar.value = 0;
-            text.text = $"Genetic Cost: 0/{configurator.MaxGeneticLoad}";
+            text.text = $"Genetic Load: 0/{configurator.MaxGeneticLoad}";
         }
     }
 }
