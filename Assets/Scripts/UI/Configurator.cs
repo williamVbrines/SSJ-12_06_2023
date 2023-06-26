@@ -22,6 +22,10 @@ namespace ssj12062023
         [SerializeField] private TypeDisplayContainer typeDisplayContainer;
         [SerializeField] private int maxGeneticLoad = 100;
 
+        [Space(10)]
+        [Header("Audio")]
+        [SerializeField] private AudioClip restartSFX;
+
         [Space(20)]
         [SerializeField] private ConfiguratorSlot[] configuratorSlots;
 
@@ -137,6 +141,8 @@ namespace ssj12062023
 
         public void RestartButton()
         {
+            AudioManager.Instance.PlaySFX(restartSFX);
+
             foreach (ConfiguratorSlot s in configuratorSlots)
             {
                 s.VialSlot.Clear();

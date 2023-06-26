@@ -8,32 +8,31 @@ namespace ssj12062023
 {
     public class AudioManager : Singleton<AudioManager>
     {
-        private AudioSource audioSource;
-
         [SerializeField] private Camera mainCamera;
+        [SerializeField] private AudioSource backgroundMusic;
+        [SerializeField] private AudioSource ambience;
+        [SerializeField] private AudioSource sfx;
+        [SerializeField] private AudioSource voice;
+
+        [Space(20)]
+        [Header("Audio Clips")]
 
         [SerializeField] private AudioClip titleLoop;
         [SerializeField] private AudioClip mainLoop;
-        [SerializeField] private AudioClip creatureCreatorOpenSFX;
-        [SerializeField] private AudioClip saveFailedSFX;
-        [SerializeField] private AudioClip saveSuccessSFX;
-        [SerializeField] private AudioClip mutationDragBeginSFX;
-        [SerializeField] private AudioClip mutationDropFailSFX;
-        [SerializeField] private AudioClip mutationDropSuccesSFX;
+        [SerializeField] private AudioClip ambienceLoop;
 
         public AudioClip TitleLoop { get { return titleLoop; } }
         public AudioClip MainLoop { get { return mainLoop; } }
-        public AudioClip CreatureCreatorOpenSFX { get { return creatureCreatorOpenSFX; } }
-        public AudioClip SaveFailedSFX { get { return saveFailedSFX; } }
-        public AudioClip SaveSuccessSFX { get { return saveSuccessSFX; } }
-        public AudioClip MutationDragBeginSFX { get { return mutationDragBeginSFX; } }
-        public AudioClip MutationDropFailSFX { get { return mutationDropFailSFX; } }
-        public AudioClip MutationDropSuccesSFX { get { return mutationDropSuccesSFX; } }
 
         protected override void Awake()
         {
             base.Awake();
-            audioSource = GetComponent<AudioSource>();
+        }
+
+        private void Start()
+        {
+            backgroundMusic.clip = titleLoop;
+            backgroundMusic.Play();
         }
 
         private void Update()
@@ -44,23 +43,36 @@ namespace ssj12062023
 
         public void VolumeUp()
         {
-            audioSource.volume += 0.1f;
+            backgroundMusic.volume += 0.1f;
         }
 
         public void VolumeDown()
         {
-            audioSource.volume -= 0.1f;
+            backgroundMusic.volume -= 0.1f;
         }
 
         public void ChangeToMainLoop()
         {
-            audioSource.clip = mainLoop;
-            audioSource.Play();
+            backgroundMusic.Stop();
+            backgroundMusic.clip = mainLoop;
+            backgroundMusic.volume = 0.3f;
+            backgroundMusic.Play();
+        }
+
+        public void PlayAmbience()
+        {
+            ambience.clip = ambienceLoop;
+            ambience.Play();
         }
 
         public void PlaySFX(AudioClip playedSFX)
         {
-            audioSource.PlayOneShot(playedSFX);
+            sfx.PlayOneShot(playedSFX);
+        }
+
+        public void PlayVoice(AudioClip line)
+        {
+            voice.PlayOneShot(line);
         }
     }
 }

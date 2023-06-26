@@ -26,6 +26,13 @@ namespace ssj12062023
         [SerializeField] private Configurator configurator;
         [SerializeField] private GameObject statsPanel;
 
+        [Space(20)]
+        [Header("Audio")]
+        [SerializeField] private AudioClip openStatsPanelSFX;
+        [SerializeField] private AudioClip closeStatsPanelSFX;
+
+        [Space(20)]
+        [Header("Body Part Previews")]
         [SerializeField] private BodyPartPreview[] previews;
 
         private void OnEnable()
@@ -78,11 +85,13 @@ namespace ssj12062023
 
         public void OpenCreatureStatsPanel()
         {
+            AudioManager.Instance.PlaySFX(openStatsPanelSFX);
             statsPanel.SetActive(true);
         }
 
         public void CloseCreatureStatsPanel()
         {
+            AudioManager.Instance.PlaySFX(closeStatsPanelSFX);
             statsPanel.SetActive(false);
         }
     }
