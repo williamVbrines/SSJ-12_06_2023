@@ -43,5 +43,17 @@ namespace ssj12062023
             Utils.SetAlpha(image, 0);
             shadowCopy.Clear();
         }
+
+        public void Hide()
+        {
+            Image.enabled = false;
+            Title.enabled = false;
+        }
+
+        public void Show()
+        {
+            Image.enabled = true;
+            Title.enabled = true;
+        }
     }
 }

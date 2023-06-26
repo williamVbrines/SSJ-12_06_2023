@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace ssj12062023
 {
-    public class Draggable : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class Draggable : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerExitHandler
     {
         [SerializeField] private float lerpTime = 1f;
 
@@ -21,6 +21,10 @@ namespace ssj12062023
         private RectTransform rectTransform;
         private CanvasGroup canvasGroup;
 
+        private VialSlot vialSlotInParent;
+
+        private ShadowCopy shadowCopy;
+
         private Vector2 originalPosition;
         private bool isDroppedInValidArea;
 
@@ -29,6 +33,8 @@ namespace ssj12062023
             canvas = FindObjectOfType<Canvas>();
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
+            vialSlotInParent = GetComponentInParent<VialSlot>();
+            shadowCopy = GetComponent<ShadowCopy>();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -98,6 +104,21 @@ namespace ssj12062023
         public void OnPointerEnter(PointerEventData eventData)
         {
             AudioManager.Instance.PlaySFX(hoverOnMutationSFX);
+
+            if(shadowCopy.GetImageGameObject().transform.localScale.x == 1)
+            {
+                shadowCopy.GetImageGameObject().transform.localScale += new Vector3(.5f, .5f, 0f);
+                vialSlotInParent.Hide();
+            }
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (shadowCopy.GetImageGameObject().transform.localScale.x == 1.5)
+            {
+                shadowCopy.GetImageGameObject().transform.localScale -= new Vector3(.5f, .5f, 0f);
+                vialSlotInParent.Show();
+            }
         }
     }
 }
