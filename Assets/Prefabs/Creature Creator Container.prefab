@@ -9871,7 +9871,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9073517437421934684}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187821383581669257}
+        m_TargetAssemblyTypeName: ssj12062023.ScreenShot, Assembly-CSharp
+        m_MethodName: CapturePreviewImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9073517437442040573
 GameObject:
   m_ObjectHideFlags: 0
@@ -13869,6 +13881,7 @@ GameObject:
   - component: {fileID: 9073517438679071251}
   - component: {fileID: 9073517438679071248}
   - component: {fileID: 3772937021255958780}
+  - component: {fileID: 187821383581669257}
   m_Layer: 5
   m_Name: Preview Container
   m_TagString: Untagged
@@ -14016,6 +14029,20 @@ MonoBehaviour:
     MutationType: 0
     Bidirectionality: 1
     Image: {fileID: 9073517438546534407}
+--- !u!114 &187821383581669257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073517438679071255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b88f77615e59ad4f9b502106a14ff09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previewWindow: {fileID: 9073517437573350065}
+  snapShotSFX: {fileID: 8300000, guid: 7b79fb5bda3047a4fbc6490250937f73, type: 3}
 --- !u!1 &9073517438719097930
 GameObject:
   m_ObjectHideFlags: 0
