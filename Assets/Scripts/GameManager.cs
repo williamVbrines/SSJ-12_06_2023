@@ -13,6 +13,7 @@ namespace ssj12062023
         [SerializeField] private GameObject ingameMenu;
         [SerializeField] private GameObject ingameUI;
         [SerializeField] private GameObject creatureCreatorUI;
+        [SerializeField] private UIFadeInOut fadeCreatureCreator;
 
         [Header("Audio")]
         [SerializeField] private AudioClip openCreatureCreatorSFX;
@@ -67,7 +68,8 @@ namespace ssj12062023
         public void ExitCreatureCreator()
         {
             AudioManager.Instance.PlaySFX(closeCreatureCreatorSFX);
-            creatureCreatorUI.SetActive(false);
+            fadeCreatureCreator.FadeUI();
+            //creatureCreatorUI.SetActive(false);
             OnCloseCreatureCreator?.Invoke();
         }
 
@@ -75,11 +77,13 @@ namespace ssj12062023
         {
             OnClickCreatureCreator?.Invoke();
         }
-
+        
         public void ShowCreatureCreator()
         {
             AudioManager.Instance.PlaySFX(openCreatureCreatorSFX);
-            creatureCreatorUI.SetActive(true);
+            fadeCreatureCreator.FadeUI();
+            //creatureCreatorUI.SetActive(true);
         }
+        
     }
 }
