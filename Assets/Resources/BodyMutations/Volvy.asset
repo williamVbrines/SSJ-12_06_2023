@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Volvy
   Description: 
   GeneticCost: 100
-  Icon: {fileID: 21300000, guid: 7eba389a8c8ff41408942dceabe7d3f4, type: 3}
+  Icon: {fileID: 21300000, guid: 43feaf2a19f436b479831bdf123edcf7, type: 3}
   Type: 2
   Bidirectionality: 2
   Hp: 0

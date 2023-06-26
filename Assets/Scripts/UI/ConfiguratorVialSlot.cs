@@ -11,6 +11,10 @@ namespace ssj12062023
         [SerializeField] private EMutationType mutationType;
         [SerializeField] private GameObject mutationVialSprite;
 
+        [Space(10)]
+        [Header("Audio")]
+        [SerializeField] private AudioClip removeVialSFX;
+
         private MutationData mutationData;
 
         public event Action<MutationData> OnRemoveVial;
@@ -41,6 +45,7 @@ namespace ssj12062023
                     return;
                 }
 
+                AudioManager.Instance.PlaySFX(removeVialSFX);
                 OnRemoveVial?.Invoke(mutationData);
                 Clear();                
             }

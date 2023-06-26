@@ -2,43 +2,50 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ssj12062023;
 
-public class ScreenToWorldRayCast : MonoBehaviour
+namespace ssj12062023
 {
-    private Ray screenToWorldRay;
-
-    private Camera mainCamera;
-
-    private Transform selectedTransform;
-    public Transform SelectedTransform { get { return selectedTransform; } }
-
-    private int layerMask;
-
-    private string creatureCreatorOpenerTag = "CreatureCreatorOpener";
-
-    private void Awake()
+    public class ScreenToWorldRayCast : MonoBehaviour
     {
-        mainCamera = Camera.main;
-        layerMask = 1 << 6;
-        layerMask = ~layerMask;
-    }
+        private Ray screenToWorldRay;
 
-    private void Update()
-    {
-        SelectHitTransform();
-    }
+        private Camera mainCamera;
 
-    private Transform CastRay(out Transform hitTransform)
-    {
-        if (!IsMouseOverUI())
+        private Transform selectedTransform;
+        public Transform SelectedTransform { get { return selectedTransform; } }
+
+        private int layerMask;
+
+        private string creatureCreatorOpenerTag = "CreatureCreatorOpener";
+
+        private void Awake()
         {
-            screenToWorldRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+            mainCamera = Camera.main;
+            layerMask = 1 << 6;
+            layerMask = ~layerMask;
+        }
 
-            if (Physics.Raycast(screenToWorldRay, out RaycastHit hit, 500f, layerMask))
+        private void Update()
+        {
+            SelectHitTransform();
+        }
+
+        private Transform CastRay(out Transform hitTransform)
+        {
+            if (!IsMouseOverUI())
             {
-                hitTransform = hit.transform;
-                return hit.transform;
+                screenToWorldRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(screenToWorldRay, out RaycastHit hit, 500f, layerMask))
+                {
+                    hitTransform = hit.transform;
+                    return hit.transform;
+                }
+                else
+                {
+                    hitTransform = null;
+                    return null;
+                }
             }
             else
             {
@@ -46,32 +53,26 @@ public class ScreenToWorldRayCast : MonoBehaviour
                 return null;
             }
         }
-        else
-        {
-            hitTransform = null;
-            return null;
-        }
-    }
 
-    private void SelectHitTransform()
-    {
-        if (GameManager.Instance.IsGameStarted)
+        private void SelectHitTransform()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && CastRay(out selectedTransform))
+            if (GameManager.Instance.IsGameStarted)
             {
-                if(selectedTransform.tag == creatureCreatorOpenerTag)
+                if (Input.GetKeyDown(KeyCode.Mouse0) && CastRay(out selectedTransform))
                 {
-                    AudioManager.Instance.PlaySFX(AudioManager.Instance.CreatureCreatorOpenSFX);
-                    GameManager.Instance.ShowCreatureCreator();
-                }
+                    if (selectedTransform.tag == creatureCreatorOpenerTag)
+                    {
+                        GameManager.Instance.ShowCreatureCreator();
+                    }
 
-                Debug.Log(SelectedTransform);
+                    Debug.Log(SelectedTransform);
+                }
             }
         }
-    }
 
-    private bool IsMouseOverUI()
-    {
-        return EventSystem.current.IsPointerOverGameObject();
+        private bool IsMouseOverUI()
+        {
+            return EventSystem.current.IsPointerOverGameObject();
+        }
     }
 }

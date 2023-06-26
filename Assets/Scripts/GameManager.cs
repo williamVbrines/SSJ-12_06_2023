@@ -14,6 +14,10 @@ namespace ssj12062023
         [SerializeField] private GameObject ingameUI;
         [SerializeField] private GameObject creatureCreatorUI;
 
+        [Header("Audio")]
+        [SerializeField] private AudioClip openCreatureCreatorSFX;
+        [SerializeField] private AudioClip closeCreatureCreatorSFX;
+
         private bool isGameStarted = false;
         public bool IsGameStarted { get { return isGameStarted; } }
 
@@ -59,11 +63,13 @@ namespace ssj12062023
 
         public void ExitCreatureCreator()
         {
+            AudioManager.Instance.PlaySFX(closeCreatureCreatorSFX);
             creatureCreatorUI.SetActive(false);
         }
 
         public void ShowCreatureCreator()
         {
+            AudioManager.Instance.PlaySFX(openCreatureCreatorSFX);
             creatureCreatorUI.SetActive(true);
         }
     }

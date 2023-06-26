@@ -6,9 +6,16 @@ using UnityEngine.UI;
 
 namespace ssj12062023
 {
-    public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class Draggable : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         [SerializeField] private float lerpTime = 1f;
+
+        [Space(20)]
+        [Header("Audio")]
+        [SerializeField] private AudioClip mutationDragBeginSFX;
+        [SerializeField] private AudioClip mutationDropFailSFX;
+        [SerializeField] private AudioClip mutationDropSuccesSFX;
+        [SerializeField] private AudioClip hoverOnMutationSFX;
 
         private Canvas canvas;
         private RectTransform rectTransform;
@@ -26,7 +33,7 @@ namespace ssj12062023
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.MutationDragBeginSFX);
+            AudioManager.Instance.PlaySFX(mutationDragBeginSFX);
             originalPosition = rectTransform.anchoredPosition;
             canvasGroup.alpha = .6f;
             canvasGroup.blocksRaycasts = false;
@@ -61,7 +68,7 @@ namespace ssj12062023
 
         private IEnumerator LerpToOriginalPosition()
         {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.MutationDropFailSFX);
+            AudioManager.Instance.PlaySFX(mutationDropFailSFX);
 
             float elapsedTime = 0;           
 
@@ -84,8 +91,13 @@ namespace ssj12062023
         // Call this function when the card is dropped in a valid area
         public void ValidDropArea()
         {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.MutationDropSuccesSFX);
+            AudioManager.Instance.PlaySFX(mutationDropSuccesSFX);
             isDroppedInValidArea = true;
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            AudioManager.Instance.PlaySFX(hoverOnMutationSFX);
         }
     }
 }
