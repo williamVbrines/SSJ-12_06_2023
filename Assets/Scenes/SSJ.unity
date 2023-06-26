@@ -4624,6 +4624,31 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 1892603940008691415, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892603940283651123, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892603940643759860, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892603940687856495, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892603941163210833, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2459972592830741038, guid: 7edd4a8d22517854c86cdfe547796539,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6633,6 +6658,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249077243640870599, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249077243886162780, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249077244046090651, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249077244320658303, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249077245445746169, guid: 7edd4a8d22517854c86cdfe547796539,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7490888744894250023, guid: 7edd4a8d22517854c86cdfe547796539,
         type: 3}
